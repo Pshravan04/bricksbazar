@@ -1,0 +1,24 @@
+# Phase 15: Admin Panel — Tasks
+
+- [x] Create mock data schemas and datasets for moderation queues and audit logs in `src/mocks/admin.ts`.
+- [x] Create dedicated layout shell `AdminShell` (`src/components/layout/AdminShell.tsx`) with dark-mode navigation sidebar, badge counters, and mobile overlay drawer.
+- [x] Build Admin Governance Overview (`/admin`):
+  - [x] Metric summary cards (Active listings, Pending moderation, Verified brokers, Pipeline GMV).
+  - [x] Quick moderation queue table with 1-click Approve and Reject actions.
+  - [x] Security and compliance audit log stream.
+  - [x] Telemetry and microservice health indicators.
+- [x] Build Property Moderation Queue (`/admin/properties`):
+  - [x] City filter and status tags.
+  - [x] Inspection modal with RERA Section 2(k) checklist.
+  - [x] Action triggers (Approve & Publish, Reject Listing, Request Revision).
+- [x] Build Agent & Broker Verification Queue (`/admin/agents`):
+  - [x] RERA license registry matching and portfolio counters.
+  - [x] Grant and revoke Verified badges with toast confirmations.
+- [x] Build Marketplace Catalog Moderation (`/admin/marketplace`):
+  - [x] Construction material review and publish controls.
+- [x] Build Audit & Security Logs (`/admin/audit-logs`):
+  - [x] Filter by status and free-text search.
+  - [x] JSON export simulation.
+- [x] Build Platform Governance Settings (`/admin/settings`):
+  - [x] RERA strictness switch, auto-approval rules, OTP toggles, and commission split defaults.
+- [x] Verify production build (`pnpm run build`) and validate static generation across all 36 application routes.

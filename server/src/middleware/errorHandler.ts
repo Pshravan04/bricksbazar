@@ -1,0 +1,26 @@
+import { Request, Response, NextFunction } from 'express';
+
+export interface AppError extends Error {
+  statusCode?: number;
+  errors?: Record<string, string>;
+}
+
+export function errorHandler(
+  err: AppError,
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void {
+  const statusCode = err.statusCode || 500;
+  const message = err.message || 'Internal Server Error';
+
+  console.error(`[Error] ${req.method} ${req.url} — ${statusCode}: ${message}`);
+
+  res.status(statusCode).json({
+    success: false,
+    error: message,
+    errors: err.errors,
+    stack: process.env.NODE_ENV === 'development' ? err.stack : undefined,
+  });
+}
+

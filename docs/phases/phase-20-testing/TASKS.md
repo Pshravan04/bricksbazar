@@ -1,0 +1,22 @@
+# Phase 20: Testing & Quality Assurance — Tasks
+
+- [x] Author Unit Test Suite for formatters (`tests/unit/formatters.test.ts`):
+  - [x] `formatINR` for Crores, Lakhs, thousands, zero.
+  - [x] `formatArea` with commas and zero fallbacks.
+  - [x] `calculatePricePerSqFt` calculation and zero area safety.
+  - [x] `slugify` title transformation.
+- [x] Author Regulatory Validation Test Suite (`tests/unit/validation.test.ts`):
+  - [x] Indian 10-digit mobile number rules (`/^[6-9]\d{9}$/`).
+  - [x] Indian 6-digit PIN code rules (`/^[1-9]\d{5}$/`).
+  - [x] Email validation regex.
+  - [x] MahaRERA Agent and Project pattern checks.
+- [x] Author Filtering & Sorting Logic Test Suite (`tests/unit/filters.test.ts`):
+  - [x] City filters, purpose filters, price ranges, BHK arrays, sort orders.
+- [x] Author Integration Service Test Suite (`tests/integration/services.test.ts`):
+  - [x] Geolocation resolution and Haversine distance calculator.
+  - [x] SMS OTP simulation.
+  - [x] Razorpay order paise conversion.
+  - [x] S3 storage keys and CDN URL resolution.
+  - [x] Transactional email dispatches.
+- [x] Wire up `pnpm test` script in `package.json`.
+- [x] Execute complete automated test run confirming 100% pass rate.

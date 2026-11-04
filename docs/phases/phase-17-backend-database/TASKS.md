@@ -1,0 +1,31 @@
+# Phase 17: Backend & Database Architecture — Tasks
+
+- [x] Install backend production dependencies: `express`, `mongoose`, `cors`, `dotenv`, `jsonwebtoken`, `bcryptjs`, and associated type definitions.
+- [x] Implement centralized environment configuration loader (`server/src/config/index.ts`).
+- [x] Implement MongoDB connection manager (`server/src/database/connection.ts`) with graceful fallback.
+- [x] Author Mongoose models with validation & indexes:
+  - [x] `User.ts` (bcrypt salted password hashing, 8 role enums, comparePassword method).
+  - [x] `Property.ts` (2dsphere geospatial coordinates, configurations array, compound indices).
+  - [x] `Project.ts` (developer ref, RERA certificate, tower and unit counts).
+  - [x] `Agent.ts` (RERA numbers, rating, specialization tags, verified status).
+  - [x] `Developer.ts` (track record, ongoing/completed projects, cities).
+  - [x] `Product.ts` (specifications map, supplier ref, pricing).
+  - [x] `Supplier.ts` (materials dealership profile, contact, ratings).
+  - [x] `Lead.ts` (enquiries, pipeline stage, notes, follow up dates).
+  - [x] `CoBrokingRequirement.ts` (broker requirement exchange schema).
+  - [x] `AuditLog.ts` (immutable security ledger, actor, IP address).
+- [x] Implement Middleware Suite:
+  - [x] `auth.ts` (JWT bearer verification, `requireRole`).
+  - [x] `errorHandler.ts` (standardized API error format).
+  - [x] `rateLimiter.ts` (sliding-window IP rate limiter).
+- [x] Implement Modular API Routes:
+  - [x] `/api/auth` (register, login, me).
+  - [x] `/api/properties` (geo queries, multi-filter search, pagination, authenticated posting).
+  - [x] `/api/projects` (list, detail by slug).
+  - [x] `/api/agents` (consultant directory, developers list).
+  - [x] `/api/marketplace` (materials catalog, suppliers).
+  - [x] `/api/leads` (enquiries, status updates, co-broking).
+  - [x] `/api/admin` (overview KPIs, property moderation, audit logs).
+  - [x] `/api/health` (microservice telemetry).
+- [x] Mount application in `server/src/app.ts` and `server/src/index.ts`.
+- [x] Verify compilation and static build with `pnpm run build`.

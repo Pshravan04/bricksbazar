@@ -1,0 +1,22 @@
+# Phase 16: Real Estate Insights & Content — Tasks
+
+- [x] Create structured data models and mock publication articles in `src/mocks/articles.ts`.
+- [x] Build Insights Hub (`/insights`):
+  - [x] Category filter pills (Market Trends, RERA & Legal, Home Buying, Construction).
+  - [x] Search input filtering titles, excerpts, and author names.
+  - [x] Featured headline report banner with editorial image.
+  - [x] Article cards with read times, publication dates, and author tags.
+- [x] Build Dynamic Article Reading Page (`/insights/[slug]`):
+  - [x] Cover photography and article header metadata.
+  - [x] Sticky desktop Table of Contents with smooth section jumping.
+  - [x] Social sharing triggers (LinkedIn, Twitter/X, WhatsApp, Clipboard copy).
+  - [x] Key takeaway callout boxes and formatted paragraphs.
+  - [x] Author credentials sign-off card.
+  - [x] Contextual related reports carousel.
+- [x] Build Institutional Pages:
+  - [x] About Us (`/about`): Mission, four pillars, pan-India network statistics.
+  - [x] Contact Us (`/contact`): Interactive inquiry form with department routing, BKC/Bengaluru/Pune office addresses.
+  - [x] Privacy Policy (`/privacy-policy`): DPDP Act 2023 & IT Act compliant privacy terms.
+  - [x] Terms & Conditions (`/terms-and-conditions`): Platform rules, RERA mandates, Section 79 intermediary liability.
+  - [x] FAQ (`/faq`): Interactive accordion categorized across Buyer, Owner, Agent, and Materials.
+- [x] Run production build (`pnpm run build`) and verify all 42 application routes.

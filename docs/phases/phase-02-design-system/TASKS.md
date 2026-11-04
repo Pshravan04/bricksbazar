@@ -1,0 +1,26 @@
+# Phase 02: Design System — Task Checklist
+
+- [x] Implement Button component (`Button.tsx`) with primary (#C6383B), secondary, outline, ghost, loading, and sizes.
+- [x] Implement Input component (`Input.tsx`) supporting text, search with clear button, validation states, and icons.
+- [x] Implement Select component (`Select.tsx`) and MultiSelect component (`MultiSelect.tsx`) with chip tags.
+- [x] Implement Checkbox (`Checkbox.tsx`), RadioGroup (`Radio.tsx`), and Switch (`Switch.tsx`).
+- [x] Implement Tabs (`Tabs.tsx`) supporting underline and pills variants.
+- [x] Implement Dropdown menu (`Dropdown.tsx`) with click-outside detection.
+- [x] Implement Modal dialog (`Modal.tsx`) and Drawer (`Drawer.tsx`) with backdrop blur and escape key listener.
+- [x] Implement Toast notification system (`Toast.tsx`) with context provider and `useToast` hook.
+- [x] Implement Tooltip component (`Tooltip.tsx`).
+- [x] Implement Badge component (`Badge.tsx`) supporting Verified, Featured, RERA, and Demo Record labels.
+- [x] Implement Breadcrumbs (`Breadcrumb.tsx`) and Pagination (`Pagination.tsx`).
+- [x] Implement Skeleton loaders (`Skeleton.tsx`) including `PropertyCardSkeleton`.
+- [x] Implement EmptyState, ErrorState, and LoadingState components (`EmptyState.tsx`).
+- [x] Implement ImageGallery modal (`ImageGallery.tsx`) with thumbnail strip and keyboard navigation.
+- [x] Implement composite PropertyCard (`PropertyCard.tsx`) with Grid and List view support, INR pricing, and specs.
+- [x] Implement composite ProjectCard (`ProjectCard.tsx`) with RERA badges and developer metadata.
+- [x] Implement composite AgentCard (`AgentCard.tsx`) and DeveloperCard (`DeveloperCard.tsx`).
+- [x] Implement composite ProductCard (`ProductCard.tsx`) for construction materials with quotation triggers.
+- [x] Implement EnquiryForm (`EnquiryForm.tsx`) with Zod validation, preferred time slots, and demo notice.
+- [x] Implement PriceRangeSelector (`PriceRangeSelector.tsx`) with Indian denominations (Lakhs & Crores).
+- [x] Implement LocationSelector (`LocationSelector.tsx`) with Indian metro options.
+- [x] Implement FilterPanel (`FilterPanel.tsx`) integrating all filters with reset and apply actions.
+- [x] Create living interactive showcase page at `/design-system` displaying all components.
+- [x] Validate build with zero errors.

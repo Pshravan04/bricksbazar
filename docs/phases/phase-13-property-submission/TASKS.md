@@ -1,0 +1,21 @@
+# Phase 13: Property Submission Wizard — Tasks
+
+- [x] Design 14-step state machine and data model (`src/features/properties/PostPropertyWizard.tsx`).
+- [x] Implement Step 1: Listing Purpose (Sell / Resale vs. Rent / Lease).
+- [x] Implement Step 2: Property Category (Residential, Commercial, Land / Plot).
+- [x] Implement Step 3: Specific Property Type (Apartment, Villa, Independent House, Penthouse, Office, Shop, Warehouse, Plot).
+- [x] Implement Step 4: Location details (City, Locality, Address, 6-digit Pincode, Landmark).
+- [x] Implement Step 5: Project or Cooperative Society Name.
+- [x] Implement Step 6: BHK Configuration, Bathrooms, and Balconies count.
+- [x] Implement Step 7: Area details (Carpet area, Super built-up, Built-up in sq.ft).
+- [x] Implement Step 8: Floor elevation, Total floors, Vastu facing, Furnishing status, Possession status.
+- [x] Implement Step 9: Pricing (Total price / rent, maintenance, deposit, negotiable flag, calculated rate/sq.ft).
+- [x] Implement Step 10: Amenities multi-selector with 16+ amenities.
+- [x] Implement Step 11: Photo upload manager with URL preview, captions, cover selection, and deletion.
+- [x] Implement Step 12: Headline, detailed description, and key selling highlights tags.
+- [x] Implement Step 13: Contact profile (Owner, Agent, Builder), 10-digit mobile, email, RERA ID validation.
+- [x] Implement Step 14: Comprehensive review card, terms confirmation, and demo submission modal.
+- [x] Implement local storage draft saving and restoring.
+- [x] Wire up route `/dashboard/properties/create`.
+- [x] Wire up public shortcut route `/post-property`.
+- [x] Verify production build and compilation with `pnpm run build`.

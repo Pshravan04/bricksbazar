@@ -1,0 +1,28 @@
+# Phase 12: Role-Based User Dashboards — Tasks
+
+- [x] Create modular layout shell `DashboardShell` (`src/components/layout/DashboardShell.tsx`) with role-specific navigation tabs.
+- [x] Configure user profile dropdown with 1-click persona switching (Agent, Buyer, Owner, Developer, Supplier, Admin).
+- [x] Implement root `/dashboard` dispatcher that redirects users based on active profile or defaults to `/dashboard/agent`.
+- [x] Build Agent/Broker Dashboard (`/dashboard/agent`):
+  - [x] Metric summary cards (Total Leads, Active Listings, Site Visits Scheduled, Pipeline Value).
+  - [x] Interactive Leads Inbox with status pill update dropdowns.
+  - [x] Lead Exchange Co-Broking requirement board preview.
+  - [x] Active property listings table with view counters and status badges.
+- [x] Build Buyer/Tenant Dashboard (`/dashboard/buyer`):
+  - [x] Metric cards (Shortlisted Homes, Site Visits Booked, Inquiries Sent).
+  - [x] Shortlisted properties grid with direct links to live listing pages.
+  - [x] Scheduled site visits list with agent contact info and date/time chips.
+- [x] Build Owner Dashboard (`/dashboard/owner`):
+  - [x] Metric cards (Listed Properties, Tenant/Buyer Inquiries, Total Impressions).
+  - [x] Active listings table with performance metrics and Post New Property CTA.
+  - [x] Recent direct inquiries with phone/email contacts and property associations.
+- [x] Build Builder/Developer Dashboard (`/dashboard/developer`):
+  - [x] Metric cards (Active Projects, Units Under Construction, Buyer Leads, Total Inventory Value).
+  - [x] Project pipeline table with launch dates, location, and units available.
+  - [x] Direct VIP site visit requests from home searchers.
+- [x] Build Supplier Dashboard (`/dashboard/supplier`):
+  - [x] Metric cards (Active Products, Inquiries/RFQs, Average Response Time, Catalog Views).
+  - [x] Incoming quotation requests with budget and contractor details.
+  - [x] Product catalog stock status overview.
+- [x] Verify responsive behavior on mobile and desktop viewports.
+- [x] Run production build (`pnpm run build`) and confirm static page generation.

@@ -1,0 +1,62 @@
+import { Developer } from '@/types';
+
+export const MOCK_DEVELOPERS: Developer[] = [
+  {
+    id: 'dev-oberoi',
+    slug: 'oberoi-realty',
+    name: 'Oberoi Realty',
+    logo: 'https://images.unsplash.com/photo-1541888946425-d0fbb1861564?auto=format&fit=crop&w=300&q=80',
+    foundedYear: 1980,
+    headquarters: 'Mumbai, Maharashtra',
+    experienceYears: 44,
+    totalProjects: 42,
+    ongoingProjects: 8,
+    completedProjects: 34,
+    rating: 4.9,
+    reviewCount: 320,
+    operatingCities: ['Mumbai', 'Thane'],
+    description:
+      'Oberoi Realty is an elite real estate development company known for architectural supremacy, design precision, and timely delivery of marquee high-rise towers in Mumbai.',
+    isVerified: true,
+    isDemoRecord: true,
+  },
+  {
+    id: 'dev-godrej',
+    slug: 'godrej-properties',
+    name: 'Godrej Properties',
+    logo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=300&q=80',
+    foundedYear: 1990,
+    headquarters: 'Mumbai, Maharashtra',
+    experienceYears: 34,
+    totalProjects: 110,
+    ongoingProjects: 24,
+    completedProjects: 86,
+    rating: 4.8,
+    reviewCount: 840,
+    operatingCities: ['Mumbai', 'Pune', 'Bengaluru', 'Delhi NCR', 'Kolkata'],
+    description:
+      'Bringing the 127-year Godrej legacy of trust and innovation to the real estate sector. Pioneering sustainable residential developments across major Indian metros.',
+    isVerified: true,
+    isDemoRecord: true,
+  },
+  {
+    id: 'dev-prestige',
+    slug: 'prestige-group',
+    name: 'Prestige Group',
+    logo: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=300&q=80',
+    foundedYear: 1986,
+    headquarters: 'Bengaluru, Karnataka',
+    experienceYears: 38,
+    totalProjects: 280,
+    ongoingProjects: 32,
+    completedProjects: 248,
+    rating: 4.9,
+    reviewCount: 1120,
+    operatingCities: ['Bengaluru', 'Hyderabad', 'Mumbai', 'Chennai', 'Goa'],
+    description:
+      'A South Indian titan in residential, commercial, retail, and hospitality projects. Renowned for massive integrated townships and landmark tech parks.',
+    isVerified: true,
+    isDemoRecord: true,
+  },
+];
+

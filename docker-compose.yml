@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bricksbazar-web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/bricksbazar
+      - NEXT_PUBLIC_SITE_URL=https://bricksbazar.com
+      - JWT_SECRET=production-secret-change-me
+    depends_on:
+      - mongo
+    networks:
+      - bb-network
+
+  mongo:
+    image: mongo:7.0
+    container_name: bricksbazar-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - bb-network
+
+volumes:
+  mongo_data:
+
+networks:
+  bb-network:
+    driver: bridge
+
