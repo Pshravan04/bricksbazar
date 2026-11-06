@@ -50,20 +50,17 @@ export function Header() {
         )}
       >
         <div className="w-full max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Official Brand Logo */}
-          <Link href="/" className="flex items-center gap-2.5 flex-shrink-0 py-0.5 group" aria-label="BricksBazar Home">
-            <div className="relative h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0">
+          {/* Official Brand Logo (Header logo artwork, no extra text) */}
+          <Link href="/" className="flex items-center flex-shrink-0 py-0.5 group" aria-label="BricksBazar Home">
+            <div className="relative h-9 sm:h-10 md:h-11 w-32 sm:w-36 md:w-40 flex-shrink-0">
               <Image
-                src="/brand/logo-mark.png"
+                src="/brand/logo-header.png"
                 alt="BricksBazar"
                 fill
-                className="object-contain"
+                className="object-contain object-left"
                 priority
               />
             </div>
-            <span className="font-heading font-extrabold text-xl tracking-tight text-brand-text group-hover:text-brand-red transition">
-              Bricks<span className="text-brand-red">Bazar</span>
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

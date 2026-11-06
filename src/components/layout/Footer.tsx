@@ -136,32 +136,33 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-2.5 group w-fit" aria-label="BricksBazar Home">
-              <div className="relative h-9 w-9 flex-shrink-0">
+            <Link href="/" className="flex items-center group w-fit" aria-label="BricksBazar Home">
+              <div className="relative h-9 sm:h-10 w-36 sm:w-40 flex-shrink-0">
                 <Image
-                  src="/brand/logo-mark.png"
+                  src="/brand/logo-header.png"
                   alt="BricksBazar"
                   fill
-                  className="object-contain"
+                  className="object-contain object-left"
                 />
               </div>
-              <span className="font-heading font-extrabold text-xl tracking-tight text-brand-text group-hover:text-brand-red transition">
-                Bricks<span className="text-brand-red">Bazar</span>
-              </span>
             </Link>
 
             <p className="text-xs text-brand-text-secondary leading-relaxed max-w-sm font-sans">
-              BricksBazar is India’s premier real estate discovery platform connecting verified luxury residences, high-yield commercial assets, and accredited MahaRERA brokers across top Indian economic corridors.
+              BricksBazar Realty LLP brings over a decade of real estate expertise in Mumbai with our signature &#8220;Realty in Detail&#8221; commitment. Connecting discerning buyers and investors with verified luxury residences, commercial hubs, and RERA-compliant developments.
             </p>
 
             <div className="space-y-2 text-xs text-brand-text-secondary pt-2">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span>MahaRERA Registered Agent: <strong className="font-mono text-brand-text">A51800029418</strong></span>
+              </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-brand-red flex-shrink-0" />
                 <span>{BRAND.contact.address}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-brand-red flex-shrink-0" />
-                <span className="font-semibold text-brand-text">{BRAND.contact.phone}</span>
+                <span className="font-semibold text-brand-text">{BRAND.contact.phone} / {BRAND.contact.phoneSecondary}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-brand-red flex-shrink-0" />
@@ -262,6 +263,11 @@ export function Footer() {
               <li>
                 <Link href="/developers" className="hover:text-brand-red transition">
                   Marquee Developer Registry
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-brand-red font-medium text-brand-red transition">
+                  Our Advisory Services
                 </Link>
               </li>
               <li>

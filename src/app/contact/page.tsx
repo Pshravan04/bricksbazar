@@ -152,16 +152,16 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-4">
             <div className="bg-white p-6 rounded-2xl border border-[#EAEAEA] shadow-xs space-y-4">
               <h3 className="text-sm font-bold text-[#252525] uppercase tracking-wider">
-                Corporate Headquarters
+                Bricksbazar Realty LLP Office
               </h3>
 
               <div className="space-y-4 text-xs">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-[#C6383B] shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold text-[#252525]">Mumbai Corporate Tower</p>
+                    <p className="font-bold text-[#252525]">Mumbai Corporate & Registered Office</p>
                     <p className="text-[#777777] mt-0.5 leading-relaxed">
-                      Level 14, One BKC, G-Block, Bandra Kurla Complex, Mumbai, Maharashtra 400051
+                      A-909, 9th Floor, Crystal 86-Central, off Shreyas Signal, Andheri-Ghatkopar Link Road, Ghatkopar West, Mumbai, Maharashtra 400086
                     </p>
                   </div>
                 </div>
@@ -169,19 +169,9 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3 border-t border-[#EAEAEA] pt-3">
                   <MapPin className="w-4 h-4 text-[#C6383B] shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold text-[#252525]">Bengaluru Tech & Engineering Hub</p>
+                    <p className="font-bold text-[#252525]">Powai Advisory Desk</p>
                     <p className="text-[#777777] mt-0.5 leading-relaxed">
-                      Indiqube Golf View Homes, Wind Tunnel Road, HAL 2nd Stage, Bengaluru, Karnataka 560008
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 border-t border-[#EAEAEA] pt-3">
-                  <MapPin className="w-4 h-4 text-[#C6383B] shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-bold text-[#252525]">Pune Regional Operations</p>
-                    <p className="text-[#777777] mt-0.5 leading-relaxed">
-                      E-Square Heights, University Road, Shivaji Nagar, Pune, Maharashtra 411016
+                      Hiranandani Gardens, Powai, Mumbai, Maharashtra 400076
                     </p>
                   </div>
                 </div>
@@ -190,21 +180,29 @@ export default function ContactPage() {
 
             {/* Direct Channels */}
             <div className="bg-white p-6 rounded-2xl border border-[#EAEAEA] shadow-xs space-y-3 text-xs">
-              <h3 className="text-sm font-bold text-[#252525]">Direct Assistance</h3>
+              <h3 className="text-sm font-bold text-[#252525]">Direct Consultation Lines</h3>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#21865B]" />
                 <div>
-                  <p className="font-bold text-[#252525]">Toll-Free Helpline</p>
-                  <p className="text-[#777777] font-mono">1800 209 8899 (9:00 AM - 8:00 PM IST)</p>
+                  <p className="font-bold text-[#252525]">Direct Mobile & WhatsApp</p>
+                  <p className="text-[#777777] font-mono">+91 98206 15020 / +91 98206 15070</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-3 border-t border-[#EAEAEA] pt-3">
                 <Mail className="w-4 h-4 text-blue-600" />
                 <div>
-                  <p className="font-bold text-[#252525]">Email Support</p>
-                  <p className="text-[#777777]">support@bricksbazar.com / legal@bricksbazar.com</p>
+                  <p className="font-bold text-[#252525]">Official Email</p>
+                  <p className="text-[#777777]">info@bricksbazar.in / info.bricksbazar@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 border-t border-[#EAEAEA] pt-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                <div>
+                  <p className="font-bold text-[#252525]">MahaRERA Registration</p>
+                  <p className="text-emerald-700 font-mono font-bold">A51800029418</p>
                 </div>
               </div>
             </div>

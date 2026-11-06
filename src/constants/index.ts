@@ -3,9 +3,11 @@
  */
 
 export const BRAND = {
-  name: 'BricksBazar',
-  tagline: "India's Premier Real Estate & Construction Marketplace",
-  description: 'Discover verified residential and commercial properties, new projects, trusted agents, and construction materials across top Indian cities.',
+  name: 'BricksBazar Realty LLP',
+  tagline: 'Realty in Detail',
+  rera: 'A51800029418',
+  description:
+    'BricksBazar Realty LLP is a trusted Mumbai real estate consultancy bringing over a decade of expertise with our signature "Realty in Detail" commitment across residential, commercial, and investment advisory.',
   colors: {
     primaryRed: '#C6383B',
     primaryRedHover: '#AB2F32',
@@ -20,22 +22,26 @@ export const BRAND = {
     error: '#C6383B',
   },
   contact: {
-    phone: '+91 98200 12345',
-    email: 'support@bricksbazar.com',
-    address: 'BricksBazar Hub, BKC, Bandra East, Mumbai, Maharashtra 400051',
+    phone: '+91 98206 15020',
+    phoneSecondary: '+91 98206 15070',
+    email: 'info@bricksbazar.in',
+    address: 'A-909, 9th Floor, Crystal 86-Central, off Shreyas Signal, Andheri-Ghatkopar Link Road, Ghatkopar West, Mumbai - 400086',
   },
   logo: '/brand/logo.png',
 };
 
 export const CITIES = [
   { id: 'mumbai', name: 'Mumbai', state: 'Maharashtra', count: '14,200+' },
-  { id: 'pune', name: 'Pune', state: 'Maharashtra', count: '8,450+' },
-  { id: 'thane', name: 'Thane', state: 'Maharashtra', count: '5,120+' },
+  { id: 'mumbai-sobo', name: 'South Mumbai (SoBo)', state: 'Maharashtra', count: '2,800+' },
+  { id: 'mumbai-western', name: 'Western Suburbs', state: 'Maharashtra', count: '6,400+' },
+  { id: 'mumbai-central', name: 'Central Suburbs', state: 'Maharashtra', count: '5,000+' },
+  { id: 'thane', name: 'Thane MMR', state: 'Maharashtra', count: '5,120+' },
   { id: 'navi-mumbai', name: 'Navi Mumbai', state: 'Maharashtra', count: '4,890+' },
-  { id: 'nashik', name: 'Nashik', state: 'Maharashtra', count: '2,340+' },
+  { id: 'pune', name: 'Pune', state: 'Maharashtra', count: '8,450+' },
   { id: 'bengaluru', name: 'Bengaluru', state: 'Karnataka', count: '12,800+' },
   { id: 'hyderabad', name: 'Hyderabad', state: 'Telangana', count: '9,750+' },
   { id: 'delhi-ncr', name: 'Delhi NCR', state: 'Delhi & NCR', count: '16,500+' },
+  { id: 'goa', name: 'Goa', state: 'Goa', count: '1,400+' },
 ];
 
 export const PROPERTY_CATEGORIES = [
@@ -94,14 +100,15 @@ export const NAV_LINKS = [
     ],
   },
   {
-    label: 'Marketplace',
-    href: '/marketplace',
+    label: 'Services',
+    href: '/services',
     dropdown: [
-      { label: 'Materials Marketplace', href: '/marketplace', description: 'Direct mill-to-site sourcing' },
-      { label: 'Steel & TMT Rebar', href: '/marketplace/category/steel-tmt-bars', description: 'Fe 550D primary mills' },
-      { label: 'Cement & Concrete', href: '/marketplace/category/cement', description: 'Grade 53 OPC & composite cement' },
-      { label: 'Tiles & Surfaces', href: '/marketplace/category/tiles-flooring', description: 'Vitrified slabs & flooring' },
-      { label: 'Verified Suppliers', href: '/suppliers', description: 'Authorized regional distributors' },
+      { label: 'All Services', href: '/services', description: 'Comprehensive real estate solutions' },
+      { label: 'Residential Advisory', href: '/services#residential', description: 'New launches, under-construction & ready flats' },
+      { label: 'Commercial Spaces', href: '/services#commercial', description: 'Offices, retail shops & industrial units' },
+      { label: 'Investment Opportunities', href: '/services#investment', description: 'Pre-leased, high ROI projects & land' },
+      { label: 'NRI Consultation', href: '/services#nri', description: 'Tailored property advisory for overseas buyers' },
+      { label: 'Legal & Home Loans', href: '/services#advisory', description: 'MahaRERA title search & bank assistance' },
     ],
   },
   {

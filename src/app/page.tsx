@@ -59,6 +59,9 @@ export default function HomePage() {
   // Popular Listings Interactive Category Filter State
   const [popularCategory, setPopularCategory] = useState<'all' | 'buy' | 'rent' | 'commercial' | 'plots'>('all');
 
+  // Metro Hubs Micro-Market Filter State
+  const [selectedHubZone, setSelectedHubZone] = useState<string>('all');
+
   // Contact Modal State
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [activeEnquiryItem, setActiveEnquiryItem] = useState<{
@@ -527,124 +530,173 @@ export default function HomePage() {
           ========================================================================= */}
       <section className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18 border-b border-brand-border">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-red-light text-brand-red text-xs font-bold tracking-wide mb-2">
               <MapPin className="w-3.5 h-3.5" />
-              <span>Micro-Market Intelligence</span>
+              <span>Micro-Market Intelligence &bull; Mumbai &amp; Key Metros</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-bold font-heading text-brand-text tracking-tight">
-              Top Indian Metro Hubs
+              Top Indian Metro Hubs &amp; Mumbai Zones
             </h2>
             <p className="text-brand-text-secondary text-sm sm:text-base mt-1">
-              Explore high-growth urban economic corridors, capital appreciation trends, and curated sanctuaries
+              Explore high-growth urban economic corridors across South Mumbai (SoBo), Western Suburbs, Central Suburbs, and MMR
             </p>
           </div>
 
           <Link
-            href="/buy"
+            href="/buy?city=Mumbai"
             className="px-5 py-2 rounded-lg border border-gray-300 hover:border-brand-text text-xs sm:text-sm font-semibold text-brand-text hover:text-brand-red transition inline-flex items-center gap-1.5 w-fit shadow-xs"
           >
-            <span>Explore All 8+ Metros</span>
+            <span>Explore All Mumbai &amp; Metros</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* 6 City Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+        {/* Micro-Market Category Filter Pills */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar text-xs">
+          {[
+            { id: 'all', label: 'All Prime Zones' },
+            { id: 'sobo', label: 'South Mumbai (SoBo)' },
+            { id: 'western', label: 'Western Suburbs' },
+            { id: 'central', label: 'Central Suburbs' },
+            { id: 'mmr', label: 'Thane & Navi Mumbai' },
+            { id: 'regional', label: 'Pune & Regional Metros' },
+          ].map((tab) => {
+            const isActive = selectedHubZone === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setSelectedHubZone(tab.id)}
+                className={cn(
+                  'px-4 py-2 rounded-lg font-semibold transition whitespace-nowrap text-xs border',
+                  isActive
+                    ? 'bg-brand-charcoal text-white border-brand-charcoal shadow-xs'
+                    : 'bg-white text-brand-text-secondary border-brand-border hover:border-brand-text hover:text-brand-text'
+                )}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* 6 Micro-Market Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6">
           {[
             {
-              city: 'Mumbai',
-              state: 'Maharashtra',
-              count: '480+ Listings',
-              avgPrice: '₹ 34,200/sq.ft',
-              localities: 'Worli • Bandra • BKC',
+              id: 'sobo',
+              zone: 'sobo',
+              city: 'South Mumbai (SoBo)',
+              state: 'Heritage & Ultra-Luxury',
+              count: '190+ Luxury Residences',
+              avgPrice: '₹ 68,500/sq.ft',
+              localities: 'Worli • Lower Parel • Marine Drive • Malabar Hill',
               image: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=800&q=80',
+              href: '/buy?city=Mumbai&locality=South+Mumbai',
             },
             {
-              city: 'Pune',
-              state: 'Maharashtra',
-              count: '290+ Listings',
-              avgPrice: '₹ 9,800/sq.ft',
-              localities: 'Kharadi • Baner • Koregaon',
+              id: 'western',
+              zone: 'western',
+              city: 'Western Suburbs',
+              state: 'Coastal & High-Growth Hub',
+              count: '420+ Verified Listings',
+              avgPrice: '₹ 34,200/sq.ft',
+              localities: 'Bandra • Juhu • Andheri • Goregaon • Borivali',
+              image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+              href: '/buy?city=Mumbai&locality=Western+Suburbs',
+            },
+            {
+              id: 'central',
+              zone: 'central',
+              city: 'Central Suburbs',
+              state: 'Tech Parks & Lakefront',
+              count: '310+ Verified Listings',
+              avgPrice: '₹ 22,800/sq.ft',
+              localities: 'Powai • Ghatkopar • Vikhroli • Kanjurmarg',
               image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
+              href: '/buy?city=Mumbai&locality=Central+Suburbs',
             },
             {
-              city: 'Bengaluru',
-              state: 'Karnataka',
-              count: '370+ Listings',
-              avgPrice: '₹ 11,500/sq.ft',
-              localities: 'Indiranagar • Whitefield',
+              id: 'thane',
+              zone: 'mmr',
+              city: 'Thane MMR',
+              state: 'Integrated Townships',
+              count: '280+ Premium Listings',
+              avgPrice: '₹ 14,500/sq.ft',
+              localities: 'Pokhran Rd 2 • Majiwada • Ghodbunder Rd',
               image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+              href: '/buy?city=Thane',
             },
             {
-              city: 'Hyderabad',
-              state: 'Telangana',
-              count: '260+ Listings',
-              avgPrice: '₹ 8,900/sq.ft',
-              localities: 'HITEC City • Gachibowli',
+              id: 'navi-mumbai',
+              zone: 'mmr',
+              city: 'Navi Mumbai',
+              state: 'Airport Corridor & Smart City',
+              count: '240+ Growth Listings',
+              avgPrice: '₹ 12,800/sq.ft',
+              localities: 'Vashi • Palm Beach • Kharghar • Airoli',
               image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80',
+              href: '/buy?city=Navi+Mumbai',
             },
             {
-              city: 'Delhi NCR',
-              state: 'North Hub',
-              count: '320+ Listings',
-              avgPrice: '₹ 15,200/sq.ft',
-              localities: 'Golf Course Rd • Noida',
-              image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80',
-            },
-            {
-              city: 'Goa',
-              state: 'Coastal Sanctuary',
-              count: '140+ Luxury Villas',
-              avgPrice: '₹ 19,400/sq.ft',
-              localities: 'Assagao • Anjuna • Candolim',
+              id: 'regional',
+              zone: 'regional',
+              city: 'Pune & Regional Metros',
+              state: 'IT & Coastal Retreats',
+              count: '350+ Curated Units',
+              avgPrice: '₹ 10,800/sq.ft',
+              localities: 'Kharadi • Baner • Koregaon Park • Goa',
               image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80',
+              href: '/buy?city=Pune',
             },
-          ].map((metro) => (
-            <Link
-              key={metro.city}
-              href={`/buy?city=${encodeURIComponent(metro.city)}`}
-              className="group relative rounded-xl overflow-hidden aspect-[3/4.2] bg-brand-bg flex flex-col justify-between p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover border border-brand-border/40"
-            >
-              <Image
-                src={metro.image}
-                alt={metro.city}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/20 group-hover:from-black/95 transition-colors" />
+          ]
+            .filter((item) => selectedHubZone === 'all' || item.zone === selectedHubZone)
+            .map((metro) => (
+              <Link
+                key={metro.city}
+                href={metro.href}
+                className="group relative rounded-xl overflow-hidden aspect-[3/4.4] bg-brand-bg flex flex-col justify-between p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover border border-brand-border/40"
+              >
+                <Image
+                  src={metro.image}
+                  alt={metro.city}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/20 group-hover:from-black/95 transition-colors" />
 
-              {/* Top Rate Pill */}
-              <div className="relative z-10 flex items-center justify-between">
-                <span className="px-2.5 py-1 rounded-md bg-white/20 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-wide">
-                  {metro.avgPrice}
-                </span>
-                <div className="w-7 h-7 rounded-lg bg-white/15 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                </div>
-              </div>
-
-              {/* Bottom Content */}
-              <div className="relative z-10 text-white space-y-1">
-                <span className="text-[10px] uppercase tracking-wider text-brand-red-light font-bold block">
-                  {metro.state}
-                </span>
-                <h3 className="font-heading font-bold text-lg sm:text-xl text-white leading-tight">
-                  {metro.city}
-                </h3>
-                <p className="text-[11px] text-white/70 truncate">
-                  {metro.localities}
-                </p>
-                <div className="pt-2 border-t border-white/15 flex items-center justify-between text-xs font-semibold text-white/90">
-                  <span>{metro.count}</span>
-                  <span className="text-[10px] text-brand-red-light group-hover:translate-x-0.5 transition-transform">
-                    Explore &rarr;
+                {/* Top Rate Pill */}
+                <div className="relative z-10 flex items-center justify-between">
+                  <span className="px-2.5 py-1 rounded-md bg-white/20 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-wide">
+                    {metro.avgPrice}
                   </span>
+                  <div className="w-7 h-7 rounded-lg bg-white/15 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+
+                {/* Bottom Content */}
+                <div className="relative z-10 text-white space-y-1">
+                  <span className="text-[10px] uppercase tracking-wider text-brand-red-light font-bold block">
+                    {metro.state}
+                  </span>
+                  <h3 className="font-heading font-bold text-base sm:text-lg text-white leading-tight">
+                    {metro.city}
+                  </h3>
+                  <p className="text-[11px] text-white/70 line-clamp-1">
+                    {metro.localities}
+                  </p>
+                  <div className="pt-2 border-t border-white/15 flex items-center justify-between text-xs font-semibold text-white/90">
+                    <span className="text-[11px]">{metro.count}</span>
+                    <span className="text-[10px] text-brand-red-light group-hover:translate-x-0.5 transition-transform">
+                      Explore &rarr;
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
         </div>
       </section>
 
