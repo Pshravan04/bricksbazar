@@ -46,13 +46,9 @@ export function Badge({
 }
 
 /**
- * Clearly labeled badge for simulated demo records
+ * Clearly labeled badge for simulated demo records (disabled/hidden per user request)
  */
 export function DemoBadge({ className }: { className?: string }) {
-  return (
-    <Badge variant="demo" size="sm" className={className}>
-      Demo Record
-    </Badge>
-  );
+  return null;
 }
 

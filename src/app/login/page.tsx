@@ -128,9 +128,8 @@ export default function LoginPage() {
           <div className="pt-4 border-t border-brand-border space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-bold text-brand-text-secondary uppercase tracking-wider">
-                Instant Demo Evaluation Logins:
+                Instant Quick Evaluation Logins:
               </span>
-              <DemoBadge />
             </div>
 
             <div className="grid grid-cols-3 gap-2">

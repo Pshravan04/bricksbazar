@@ -67,7 +67,6 @@ export default function DeveloperProfilePage() {
                 <div className="flex-1 space-y-2">
                   <div className="flex items-center gap-2 flex-wrap">
                     {developer.isVerified && <Badge variant="verified">Verified Indian Developer</Badge>}
-                    {developer.isDemoRecord && <DemoBadge />}
                   </div>
 
                   <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-text">

@@ -33,7 +33,6 @@ export function ProductCard({ product, onRequestQuote, className }: ProductCardP
         {/* Badges */}
         <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5 z-10">
           <Badge variant="default" size="sm">{product.category}</Badge>
-          {product.isDemoRecord && <DemoBadge />}
         </div>
       </div>
 

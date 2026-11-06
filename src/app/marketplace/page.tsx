@@ -137,12 +137,9 @@ export default function MarketplaceHomePage() {
         {/* 4. Featured Products Catalog */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <h2 className="text-xl sm:text-2xl font-extrabold text-brand-text">
-                Featured Materials & Rebars
-              </h2>
-              <DemoBadge />
-            </div>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-brand-text">
+              Featured Materials & Rebars
+            </h2>
             <Link href="/suppliers" className="text-xs font-bold text-brand-red hover:underline">
               View Verified Suppliers &rarr;
             </Link>

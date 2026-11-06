@@ -69,7 +69,6 @@ export default function AgentProfilePage() {
                 <div className="flex-1 space-y-2">
                   <div className="flex items-center gap-2 flex-wrap">
                     {agent.isVerified && <Badge variant="verified">RERA Verified Consultant</Badge>}
-                    {agent.isDemoRecord && <DemoBadge />}
                   </div>
 
                   <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-text">

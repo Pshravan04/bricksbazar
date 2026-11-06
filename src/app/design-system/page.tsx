@@ -261,7 +261,6 @@ function DesignSystemContent() {
             <Badge variant="verified">RERA Verified</Badge>
             <Badge variant="featured">Featured Listing</Badge>
             <Badge variant="rera">RERA Approved</Badge>
-            <DemoBadge />
             <Badge variant="warning">Under Negotiation</Badge>
             <Badge variant="outline">Ready to Move</Badge>
           </div>

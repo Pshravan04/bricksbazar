@@ -62,7 +62,6 @@ export default function SupplierDashboardPage() {
             <h3 className="font-extrabold text-base text-brand-text">
               Active Stock & Catalog
             </h3>
-            <DemoBadge />
           </div>
 
           <div className="divide-y divide-brand-border">

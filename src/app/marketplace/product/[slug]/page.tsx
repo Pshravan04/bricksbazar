@@ -70,7 +70,6 @@ export default function ProductDetailPage() {
                   />
                   <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
                     <Badge variant="default" size="sm">{product.category}</Badge>
-                    {product.isDemoRecord && <DemoBadge />}
                   </div>
                 </div>
 

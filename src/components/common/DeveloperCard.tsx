@@ -31,7 +31,6 @@ export function DeveloperCard({ developer, className }: DeveloperCardProps) {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-1.5 flex-wrap mb-0.5">
               {developer.isVerified && <Badge variant="verified" size="sm">Verified Builder</Badge>}
-              {developer.isDemoRecord && <DemoBadge />}
             </div>
 
             <Link href={`/developers/${developer.slug}`}>

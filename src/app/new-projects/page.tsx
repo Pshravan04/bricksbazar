@@ -66,12 +66,9 @@ export default function NewProjectsDirectoryPage() {
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <div className="flex items-center gap-2 mb-1">
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-text">
-                  New & Upcoming Projects in India
-                </h1>
-                <DemoBadge />
-              </div>
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-text mb-1">
+                New & Upcoming Projects in India
+              </h1>
               <p className="text-xs sm:text-sm text-brand-text-secondary">
                 RERA-approved pre-launches, under-construction towers, and ready gated townships.
               </p>

@@ -94,12 +94,10 @@ function VerifyOtpContent() {
                   onKeyDown={(e) => handleKeyDown(idx, e)}
                   className="w-11 h-12 text-center text-lg font-extrabold rounded-lg border border-brand-border bg-brand-bg text-brand-text focus:outline-none focus:border-brand-red focus:bg-white focus:ring-1 focus:ring-brand-red"
                 />
-              ))}
-            </div>
+              ))}         </div>
 
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-900 flex items-start gap-2">
-              <DemoBadge className="mt-0.5" />
-              <span>Demo Mode: Any 6-digit combination (e.g. 123456) will verify successfully.</span>
+            <div className="bg-brand-bg border border-brand-border rounded-lg p-3 text-xs text-brand-text-secondary flex items-start gap-2">
+              <span>Enter the 6-digit verification code sent to your registered contact.</span>
             </div>
 
             <Button type="submit" isLoading={isVerifying} className="w-full" size="md">

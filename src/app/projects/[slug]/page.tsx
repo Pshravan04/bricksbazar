@@ -91,7 +91,6 @@ export default function ProjectDetailPage() {
           <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
             {project.isVerified && <Badge variant="verified">Verified Project</Badge>}
             {project.isReraApproved && <Badge variant="rera">RERA Approved: {project.reraId}</Badge>}
-            {project.isDemoRecord && <DemoBadge />}
           </div>
 
           {/* Bottom Title & Specs Overlay */}

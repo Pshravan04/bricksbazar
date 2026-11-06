@@ -55,7 +55,6 @@ export function PropertyCard({
           <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
             {property.isVerified && <Badge variant="verified">Verified</Badge>}
             {property.isFeatured && <Badge variant="featured">Featured</Badge>}
-            {property.isDemoRecord && <DemoBadge />}
           </div>
 
           <button
@@ -182,7 +181,6 @@ export function PropertyCard({
         <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
           {property.isVerified && <Badge variant="verified">Verified</Badge>}
           {property.isFeatured && <Badge variant="featured">Featured</Badge>}
-          {property.isDemoRecord && <DemoBadge />}
         </div>
 
         {/* Minimalist Favorite Button */}

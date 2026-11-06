@@ -139,7 +139,6 @@ export function DashboardShell({
             <span className="text-[10px] font-bold text-brand-text-secondary uppercase tracking-wider">
               Portal Mode
             </span>
-            <DemoBadge />
           </div>
           <div className="text-xs font-bold text-brand-text capitalize flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-brand-success" />

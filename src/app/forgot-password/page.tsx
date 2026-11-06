@@ -53,9 +53,8 @@ export default function ForgotPasswordPage() {
               <p className="text-xs text-brand-text-secondary leading-relaxed">
                 We have prepared a password reset link for <strong className="text-brand-text">{emailOrPhone}</strong>.
               </p>
-              <div className="p-3 bg-amber-50 rounded-lg border border-amber-200 text-xs text-amber-900">
-                <DemoBadge className="mr-1" />
-                In demo mode, no real email or SMS has been transmitted.
+              <div className="p-3 bg-brand-bg rounded-lg border border-brand-border text-xs text-brand-text-secondary">
+                Please follow the instructions sent to your registered address to reset your password.
               </div>
               <Link href="/login" className="block pt-2">
                 <Button variant="outline" size="sm" className="w-full">

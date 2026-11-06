@@ -152,7 +152,6 @@ export default function PropertyDetailPage() {
               <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
                 {property.isVerified && <Badge variant="verified">Verified RERA</Badge>}
                 {property.isFeatured && <Badge variant="featured">Featured Listing</Badge>}
-                {property.isDemoRecord && <DemoBadge />}
               </div>
             </div>
 

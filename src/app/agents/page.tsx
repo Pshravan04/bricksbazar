@@ -56,12 +56,9 @@ export default function AgentsDirectoryPage() {
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <div className="flex items-center gap-2 mb-1">
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-text">
-                  Verified Real Estate Agents in India
-                </h1>
-                <DemoBadge />
-              </div>
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-text mb-1">
+                Verified Real Estate Agents in India
+              </h1>
               <p className="text-xs sm:text-sm text-brand-text-secondary">
                 Connect with licensed RERA consultants who possess deep micro-market insights and verified listings.
               </p>

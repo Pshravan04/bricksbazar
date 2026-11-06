@@ -48,7 +48,6 @@ export default function SupplierProfilePage() {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <Badge variant="verified">Authorized Distributor</Badge>
-                    <DemoBadge />
                   </div>
                   <h1 className="text-2xl font-extrabold text-brand-text">
                     {supplier.businessName}

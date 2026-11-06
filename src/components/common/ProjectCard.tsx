@@ -33,7 +33,6 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 max-w-[85%]">
           {project.isVerified && <Badge variant="verified">Verified Project</Badge>}
           {project.isReraApproved && <Badge variant="rera">RERA Approved</Badge>}
-          {project.isDemoRecord && <DemoBadge />}
         </div>
 
         {/* Status Badge */}

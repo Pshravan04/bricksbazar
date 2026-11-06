@@ -32,7 +32,6 @@ export function AgentCard({ agent, onContactClick, className }: AgentCardProps) 
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-1.5 flex-wrap mb-1">
               {agent.isVerified && <Badge variant="verified" size="sm">Verified</Badge>}
-              {agent.isDemoRecord && <DemoBadge />}
             </div>
 
             <Link href={`/agents/${agent.slug}`}>

@@ -70,7 +70,6 @@ export default function OwnerDashboardPage() {
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <span className="font-bold text-base text-brand-text">{ownerProperty.title}</span>
-                <DemoBadge />
               </div>
               <div className="text-xs text-brand-text-secondary">
                 {ownerProperty.location.locality}, {ownerProperty.location.city} &bull; {ownerProperty.bhk} &bull; {ownerProperty.carpetArea} sq.ft
