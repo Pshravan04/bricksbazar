@@ -122,7 +122,7 @@ export default function HomePage() {
         <div className="relative w-full rounded-xl overflow-hidden min-h-[580px] lg:min-h-[660px] flex items-center p-6 sm:p-10 lg:p-16 shadow-card">
           {/* Background Image: High-end Architectural Landscape */}
           <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+            src="/images/properties/the-address-by-gs-bandra.jpeg"
             alt="Modern Luxury Residence & Natural Landscape"
             fill
             priority
@@ -593,7 +593,7 @@ export default function HomePage() {
               count: '190+ Luxury Residences',
               avgPrice: '₹ 68,500/sq.ft',
               localities: 'Worli • Lower Parel • Marine Drive • Malabar Hill',
-              image: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=800&q=80',
+              image: '/images/properties/lt-mahim.jpg',
               href: '/buy?city=Mumbai&locality=South+Mumbai',
             },
             {
@@ -604,7 +604,7 @@ export default function HomePage() {
               count: '420+ Verified Listings',
               avgPrice: '₹ 34,200/sq.ft',
               localities: 'Bandra • Juhu • Andheri • Goregaon • Borivali',
-              image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+              image: '/images/properties/h-rishabraj-opulence.jpg',
               href: '/buy?city=Mumbai&locality=Western+Suburbs',
             },
             {
@@ -615,7 +615,7 @@ export default function HomePage() {
               count: '310+ Verified Listings',
               avgPrice: '₹ 22,800/sq.ft',
               localities: 'Powai • Ghatkopar • Vikhroli • Kanjurmarg',
-              image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
+              image: '/images/properties/lt-elixir-reserve.jpg',
               href: '/buy?city=Mumbai&locality=Central+Suburbs',
             },
             {
@@ -626,7 +626,7 @@ export default function HomePage() {
               count: '280+ Premium Listings',
               avgPrice: '₹ 14,500/sq.ft',
               localities: 'Pokhran Rd 2 • Majiwada • Ghodbunder Rd',
-              image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+              image: '/images/properties/oberoi-garden-city-thane.jpg',
               href: '/buy?city=Thane',
             },
             {
@@ -637,18 +637,18 @@ export default function HomePage() {
               count: '240+ Growth Listings',
               avgPrice: '₹ 12,800/sq.ft',
               localities: 'Vashi • Palm Beach • Kharghar • Airoli',
-              image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80',
+              image: '/images/properties/hiranandani-sands-alibaug.webp',
               href: '/buy?city=Navi+Mumbai',
             },
             {
               id: 'regional',
               zone: 'regional',
-              city: 'Pune & Regional Metros',
-              state: 'IT & Coastal Retreats',
+              city: 'Plotted & Retreats',
+              state: 'Nature & Coastal Enclaves',
               count: '350+ Curated Units',
               avgPrice: '₹ 10,800/sq.ft',
-              localities: 'Kharadi • Baner • Koregaon Park • Goa',
-              image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80',
+              localities: 'Khopoli • Pali • Alibaug • Pune',
+              image: '/images/properties/neoliv-khopoli.png',
               href: '/buy?city=Pune',
             },
           ]
