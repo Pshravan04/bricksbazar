@@ -14,6 +14,8 @@ import { EnquiryForm } from '@/components/common/EnquiryForm';
 import { ProjectCard } from '@/components/common/ProjectCard';
 import { Modal } from '@/components/ui/Modal';
 import { useToast } from '@/components/ui/Toast';
+import { AmenitiesSlider } from '@/components/property/AmenitiesSlider';
+import { LocationWithMap } from '@/components/property/LocationWithMap';
 import {
   MapPin,
   Building,
@@ -184,24 +186,17 @@ export default function ProjectDetailPage() {
               </div>
             </div>
 
-            {/* Curated Amenities */}
-            <div className="bg-white rounded-card border border-brand-border p-6 shadow-card space-y-4">
-              <h3 className="text-base font-bold text-brand-text border-b border-brand-border pb-3">
-                Master Clubhouse & Amenities
-              </h3>
+            {/* Curated Master Clubhouse & Amenities Images Slider */}
+            <AmenitiesSlider
+              amenities={project.amenities}
+              propertyTitle={project.name}
+            />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {project.amenities.map((a, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3 bg-brand-bg rounded-lg border border-brand-border flex items-center gap-2.5 text-xs font-semibold text-brand-text"
-                  >
-                    <Sparkles className="w-4 h-4 text-brand-red flex-shrink-0" />
-                    <span>{a}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Location Advantages & Infrastructure with Map */}
+            <LocationWithMap
+              location={project.location}
+              propertyTitle={project.name}
+            />
 
             {/* Developer Credibility */}
             <div className="bg-white rounded-card border border-brand-border p-6 shadow-card space-y-4">

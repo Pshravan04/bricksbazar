@@ -15,6 +15,8 @@ import { EnquiryForm } from '@/components/common/EnquiryForm';
 import { PropertyCard } from '@/components/common/PropertyCard';
 import { Modal } from '@/components/ui/Modal';
 import { useToast } from '@/components/ui/Toast';
+import { AmenitiesSlider } from '@/components/property/AmenitiesSlider';
+import { LocationWithMap } from '@/components/property/LocationWithMap';
 import {
   MapPin,
   Heart,
@@ -350,46 +352,17 @@ export default function PropertyDetailPage() {
               </p>
             </div>
 
-            {/* Amenities Grid */}
-            <div className="bg-white rounded-card border border-brand-border p-6 shadow-card space-y-4">
-              <h3 className="text-base font-bold text-brand-text border-b border-brand-border pb-3">
-                Amenities & Facilities
-              </h3>
+            {/* Amenities & Facilities Images Slider */}
+            <AmenitiesSlider
+              amenities={property.amenities}
+              propertyTitle={property.title}
+            />
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {property.amenities.map((amenity, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3 bg-brand-bg rounded-lg border border-brand-border flex items-center gap-2.5 text-xs font-semibold text-brand-text"
-                  >
-                    <Sparkles className="w-4 h-4 text-brand-red flex-shrink-0" />
-                    <span>{amenity}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Location & Nearby Landmarks */}
-            <div className="bg-white rounded-card border border-brand-border p-6 shadow-card space-y-4">
-              <h3 className="text-base font-bold text-brand-text border-b border-brand-border pb-3">
-                Location Advantages & Infrastructure
-              </h3>
-
-              <div className="space-y-3">
-                {nearbyLandmarks.map((lm, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center justify-between p-3 bg-brand-bg rounded-lg border border-brand-border text-xs"
-                  >
-                    <div className="flex items-center gap-2 font-medium text-brand-text">
-                      <MapPin className="w-4 h-4 text-brand-red flex-shrink-0" />
-                      <span>{lm.name}</span>
-                    </div>
-                    <span className="font-bold text-brand-text-secondary">{lm.distance}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Location Advantages & Infrastructure with Interactive Map */}
+            <LocationWithMap
+              location={property.location}
+              propertyTitle={property.title}
+            />
           </div>
 
           {/* Right Column: Sticky Enquiry & Consultant Card */}
