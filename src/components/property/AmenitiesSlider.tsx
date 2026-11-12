@@ -477,3 +477,4 @@ export function AmenitiesSlider({ amenities, propertyTitle }: AmenitiesSliderPro
     </div>
   );
 }
+
