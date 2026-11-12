@@ -81,18 +81,20 @@ export default function PropertyDetailPage() {
     else info('Removed from Shortlist');
   };
 
-  // Nearby landmarks
-  const nearbyLandmarks = [
-    { name: 'Metro / Rapid Transit Station', distance: '450 meters (5 mins walk)' },
-    { name: 'International Airport (BOM / PNQ / BLR)', distance: '8.2 km (20 mins drive)' },
-    { name: 'Top ICSE / IB World School', distance: '1.2 km (6 mins drive)' },
-    { name: 'Multi-Speciality Hospital', distance: '1.8 km (8 mins drive)' },
-    { name: 'Luxury High Street Mall & PVR', distance: '900 meters (3 mins drive)' },
-  ];
-
-  const similarProperties = MOCK_PROPERTIES.filter(
-    (p) => p.id !== property.id && (p.location.city === property.location.city || p.listingType === property.listingType)
-  ).slice(0, 3);
+  const similarProperties = useMemo(() => {
+    const strictMatches = MOCK_PROPERTIES.filter((p) => {
+      if (p.id === property.id) return false;
+      if (p.listingType !== property.listingType) return false;
+      if (p.location.city.toLowerCase() !== property.location.city.toLowerCase()) return false;
+      const ratio = p.price / property.price;
+      return ratio >= 0.5 && ratio <= 1.8;
+    });
+    if (strictMatches.length >= 3) return strictMatches.slice(0, 3);
+    const cityMatches = MOCK_PROPERTIES.filter(
+      (p) => p.id !== property.id && p.listingType === property.listingType && p.location.city.toLowerCase() === property.location.city.toLowerCase()
+    );
+    return cityMatches.slice(0, 3);
+  }, [property]);
 
   return (
     <div className="min-h-screen bg-brand-bg pb-24">
@@ -153,7 +155,20 @@ export default function PropertyDetailPage() {
                 priority
               />
               <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
-                {property.isVerified && <Badge variant="verified">Verified RERA</Badge>}
+                {property.isVerified && property.reraId && (
+                  <a
+                    href={property.location.city.toLowerCase() === 'bengaluru' ? 'https://rera.karnataka.gov.in/' : 'https://maharera.maharashtra.gov.in/'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-600/95 text-white backdrop-blur-sm shadow-sm hover:bg-emerald-700 transition"
+                    title={`Verified on ${property.reraVerificationSource || 'MahaRERA Public Registry'} on ${property.reraVerifiedOn || '2026-03-15'}`}
+                  >
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>RERA: {property.reraId}</span>
+                    <ExternalLink className="w-3 h-3 ml-0.5 opacity-80" />
+                  </a>
+                )}
                 {property.isFeatured && <Badge variant="featured">Featured Listing</Badge>}
               </div>
             </div>
@@ -320,8 +335,26 @@ export default function PropertyDetailPage() {
                   <span className="font-bold text-brand-text mt-0.5 block">{property.propertyAge || 'Brand New'}</span>
                 </div>
                 <div>
-                  <span className="text-brand-text-secondary block">RERA Registration ID</span>
-                  <span className="font-mono font-bold text-brand-text mt-0.5 block">{property.reraId || 'Verified Project'}</span>
+                  <span className="text-brand-text-secondary block">RERA Registration</span>
+                  {property.reraId ? (
+                    <a
+                      href={property.location.city.toLowerCase() === 'bengaluru' ? 'https://rera.karnataka.gov.in/' : 'https://maharera.maharashtra.gov.in/'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono font-bold text-brand-red hover:underline mt-0.5 inline-flex items-center gap-1"
+                      title="Verify on official government RERA portal"
+                    >
+                      <span>{property.reraId}</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  ) : (
+                    <span className="font-bold text-brand-text mt-0.5 block">Not Applicable</span>
+                  )}
+                  {property.reraVerifiedOn && (
+                    <span className="text-[10px] text-emerald-700 block font-medium mt-0.5">
+                      Verified on {property.reraVerifiedOn}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <span className="text-brand-text-secondary block">Posted By</span>

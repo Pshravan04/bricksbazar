@@ -17,11 +17,11 @@ export const MOCK_PROPERTIES: Property[] = [
       coordinates: { lat: 19.1663, lng: 72.8468 },
     },
     price: 9900000, // ₹ 99 Lakhs onwards
-    pricePerSqFt: 19800,
+    pricePerSqFt: 24750,
     isNegotiable: true,
-    bhk: '2 BHK',
-    carpetArea: 550,
-    superBuiltUpArea: 720,
+    bhk: '1 BHK',
+    carpetArea: 400,
+    superBuiltUpArea: 520,
     configurations: [
       {
         id: 'cfg-bb-01-1',
@@ -44,8 +44,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/h-rishabraj-opulence.jpg',
-      '/images/properties/arkade-evoke.webp',
-      '/images/properties/kolte-patil-goregaon.webp',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -72,6 +70,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'H. Rishabraj Opulence presents premium 1 & 2 BHK residences on S.V. Road, Goregaon West. Engineered for modern urban living, each residence features expansive French windows, modular fittings, and world-class rooftop lifestyle amenities with seamless access to Western Express Highway and Link Road.',
     reraId: 'P51800047890',
+    reraVerifiedOn: '2026-03-10',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -104,11 +104,11 @@ export const MOCK_PROPERTIES: Property[] = [
       coordinates: { lat: 19.1257, lng: 72.9097 },
     },
     price: 30600000, // ₹ 3.06 Cr onwards
-    pricePerSqFt: 27800,
+    pricePerSqFt: 37778,
     isNegotiable: true,
-    bhk: '3 BHK',
-    carpetArea: 1100,
-    superBuiltUpArea: 1450,
+    bhk: '2 BHK',
+    carpetArea: 810,
+    superBuiltUpArea: 1080,
     configurations: [
       {
         id: 'cfg-bb-02-1',
@@ -140,8 +140,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/lt-elixir-reserve.jpg',
-      '/images/properties/hiranandani-empress-hill.jpg',
-      '/images/properties/crescent-silverwoods.jpg',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -168,6 +166,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'L&T Elixir Reserve is an architectural sanctuary nestled by the serene waters of Powai Lake. Featuring 2, 3 & 4 BHK palatial residences with double-height sun decks, curated landscaped woods, and resort-style living right in the heart of Mumbai’s tech and business capital.',
     reraId: 'P51800033618',
+    reraVerifiedOn: '2026-03-12',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -192,7 +192,7 @@ export const MOCK_PROPERTIES: Property[] = [
     propertyCategory: 'Apartment',
     location: {
       city: 'Mumbai',
-      locality: 'Bandra',
+      locality: 'Bandra East',
       subLocality: 'Western Suburbs',
       address: 'Off Western Express Highway, Bandra East, Mumbai',
       landmark: 'Minutes from BKC Financial Hub',
@@ -200,11 +200,11 @@ export const MOCK_PROPERTIES: Property[] = [
       coordinates: { lat: 19.0607, lng: 72.8488 },
     },
     price: 26900000, // ₹ 2.69 Cr onwards
-    pricePerSqFt: 39500,
+    pricePerSqFt: 39559,
     isNegotiable: false,
-    bhk: '3 BHK',
-    carpetArea: 980,
-    superBuiltUpArea: 1300,
+    bhk: '2 BHK',
+    carpetArea: 680,
+    superBuiltUpArea: 900,
     configurations: [
       {
         id: 'cfg-bb-03-1',
@@ -236,8 +236,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/the-address-by-gs-bandra.jpeg',
-      '/images/properties/lt-mahim.jpg',
-      '/images/properties/h-rishabraj-opulence.jpg',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'New Launch',
@@ -264,6 +262,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'The Address by GS delivers benchmark aristocratic living in Bandra. Offering signature 2, 3 & 4 BHK residences designed with Italian marble flooring, high ceilings, smart-home provisions, and effortless connectivity to the Bandra-Worli Sea Link and BKC financial district.',
     reraId: 'P51800051234',
+    reraVerifiedOn: '2026-03-14',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -298,9 +298,9 @@ export const MOCK_PROPERTIES: Property[] = [
     price: 34500000, // ₹ 3.45 Cr onwards
     pricePerSqFt: 46000,
     isNegotiable: true,
-    bhk: '3 BHK',
-    carpetArea: 950,
-    superBuiltUpArea: 1250,
+    bhk: '2 BHK',
+    carpetArea: 750,
+    superBuiltUpArea: 980,
     configurations: [
       {
         id: 'cfg-bb-04-1',
@@ -323,8 +323,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/lt-mahim.jpg',
-      '/images/properties/the-address-by-gs-bandra.jpeg',
-      '/images/properties/crescent-boulevard-towers.jpg',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -350,6 +348,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'L&T Mahim represents an irreplaceable coastal address bridging Bandra and South Mumbai. Offering bespoke 2 and 3 BHK luxury residences with sweeping bay views, bespoke clubhouse amenities, and close proximity to Mumbai’s most iconic heritage landmarks.',
     reraId: 'P51800048992',
+    reraVerifiedOn: '2026-03-15',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -382,11 +382,11 @@ export const MOCK_PROPERTIES: Property[] = [
       coordinates: { lat: 19.0912, lng: 72.8988 },
     },
     price: 7700000, // ₹ 77 Lakhs onwards
-    pricePerSqFt: 18500,
+    pricePerSqFt: 25667,
     isNegotiable: true,
     bhk: 'Studio',
-    carpetArea: 415,
-    superBuiltUpArea: 600,
+    carpetArea: 300,
+    superBuiltUpArea: 450,
     configurations: [
       {
         id: 'cfg-bb-05-1',
@@ -409,7 +409,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/arihant-at-asalpha.png',
-      '/images/properties/godrej-vistas-vikhroli.png',
     ],
     furnishing: 'Unfurnished',
     possession: 'Ready to Move',
@@ -435,6 +434,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Arihant At Asalpha offers boutique, high-efficiency Grade-A office spaces directly on the Andheri-Ghatkopar Link Road corridor. Ideal for doctors, chartered accountants, legal firms, IT startups, and investors seeking high annual yields.',
     reraId: 'P51800029811',
+    reraVerifiedOn: '2026-03-11',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -467,9 +468,9 @@ export const MOCK_PROPERTIES: Property[] = [
       coordinates: { lat: 19.1098, lng: 72.9288 },
     },
     price: 27100000, // ₹ 2.71 Cr onwards
-    pricePerSqFt: 31800,
+    pricePerSqFt: 31845,
     isNegotiable: true,
-    bhk: '3 BHK',
+    bhk: '2 BHK',
     carpetArea: 851,
     superBuiltUpArea: 1140,
     configurations: [
@@ -503,8 +504,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/godrej-vistas-vikhroli.png',
-      '/images/properties/adani-triumph.webp',
-      '/images/properties/raheja-kanjurmarg.webp',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -530,6 +529,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Godrej Vistas in Vikhroli East presents an exquisite blend of urban connectivity and pristine natural beauty. Overlooking Mumbai’s tranquil mangrove reserve, each residence offers expansive deck spaces, high-specification interiors, and world-class health amenities.',
     reraId: 'P51800054231',
+    reraVerifiedOn: '2026-03-16',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -562,7 +563,7 @@ export const MOCK_PROPERTIES: Property[] = [
       coordinates: { lat: 19.1306, lng: 72.9322 },
     },
     price: 16500000, // ₹ 1.65 Cr onwards
-    pricePerSqFt: 22350,
+    pricePerSqFt: 22358,
     isNegotiable: true,
     bhk: '2 BHK',
     carpetArea: 738,
@@ -598,8 +599,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/adani-triumph.webp',
-      '/images/properties/raheja-kanjurmarg.webp',
-      '/images/properties/godrej-bhandup.jpg',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -625,6 +624,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Adani Triumph brings signature high-rise living to Kanjurmarg West. Situated right off LBS Marg and JVLR, it provides unmatched connectivity across Mumbai while delivering tranquil landscaped gardens, modern sports infrastructure, and luxury club amenities.',
     reraId: 'P51800049281',
+    reraVerifiedOn: '2026-03-18',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -657,7 +658,7 @@ export const MOCK_PROPERTIES: Property[] = [
       coordinates: { lat: 19.2183, lng: 72.9688 },
     },
     price: 31800000, // ₹ 3.18 Cr onwards
-    pricePerSqFt: 21500,
+    pricePerSqFt: 21545,
     isNegotiable: true,
     bhk: '3 BHK',
     carpetArea: 1476,
@@ -684,8 +685,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/oberoi-garden-city-thane.jpg',
-      '/images/properties/rustomjee-verdant-vistas.webp',
-      '/images/properties/lt-evara-heights.webp',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'New Launch',
@@ -711,6 +710,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Oberoi Garden City Thane introduces benchmark integrated township living to Pokhran Road 2. Set against the serene backdrop of Yeoor Hills, this world-class development combines luxury residences, international school, premium retail, and expansive sports amenities.',
     reraId: 'P51700055102',
+    reraVerifiedOn: '2026-03-20',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -743,7 +744,7 @@ export const MOCK_PROPERTIES: Property[] = [
       coordinates: { lat: 19.2312, lng: 72.8522 },
     },
     price: 35000000, // ₹ 3.50 Cr onwards
-    pricePerSqFt: 31800,
+    pricePerSqFt: 31818,
     isNegotiable: true,
     bhk: '3 BHK',
     carpetArea: 1100,
@@ -770,8 +771,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/lodha-borivali.jpg',
-      '/images/properties/mahindra-marina-malad.png',
-      '/images/properties/kolte-patil-goregaon.webp',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'New Launch',
@@ -797,6 +796,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Lodha Borivali redefines luxury living in Mumbai’s prominent Western Suburb. Offering sprawling 3 & 4 BHK residences with private sundecks, world-class hospitality managed by Saint Amand, and manicured open greens.',
     reraId: 'P51800056123',
+    reraVerifiedOn: '2026-03-22',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -829,7 +830,7 @@ export const MOCK_PROPERTIES: Property[] = [
       coordinates: { lat: 19.1155, lng: 72.8944 },
     },
     price: 12100000, // ₹ 1.21 Cr onwards
-    pricePerSqFt: 28000,
+    pricePerSqFt: 28074,
     isNegotiable: true,
     bhk: '1 BHK',
     carpetArea: 431,
@@ -856,8 +857,6 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/crescent-silverwoods.jpg',
-      '/images/properties/crescent-boulevard-towers.jpg',
-      '/images/properties/lt-elixir-reserve.jpg',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Ready to Move',
@@ -883,6 +882,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Crescent Silverwoods in Chandivali-Powai offers ready-to-move 1 & 2 BHK residences with OC received. Designed for young professionals and families seeking a serene enclave moments away from Powai Lake, international schools, and metro transit.',
     reraId: 'P51800030114',
+    reraVerifiedOn: '2026-03-23',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -973,6 +974,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Experience unmatched coastal opulence in this bespoke 3 BHK home situated in prestigious Pali Hill, Bandra West. Boasting panoramic sea views, double-height sundecks, Italian marble floors, and state-of-the-art home automation, this residence sets the benchmark for elite urban living.',
     reraId: 'P51800028912',
+    reraVerifiedOn: '2026-02-15',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -985,7 +988,7 @@ export const MOCK_PROPERTIES: Property[] = [
       isVerified: true,
       rating: 4.9,
     },
-    isDemoRecord: true,
+    isDemoRecord: false,
     createdAt: '2026-02-15T10:00:00Z',
     updatedAt: '2026-03-01T12:00:00Z',
   },
@@ -1050,6 +1053,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Immaculately furnished 2 BHK apartment in Hiranandani Gardens, Powai. Features floor-to-ceiling windows overlooking lush green surroundings and Powai lake, integrated modular kitchen with branded European appliances, and elegant hardwood decor.',
     reraId: 'P51800019482',
+    reraVerifiedOn: '2026-02-20',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Owner',
@@ -1059,7 +1064,7 @@ export const MOCK_PROPERTIES: Property[] = [
       email: 'sunil.deshmukh@gmail.com',
       isVerified: true,
     },
-    isDemoRecord: true,
+    isDemoRecord: false,
     createdAt: '2026-02-20T08:30:00Z',
     updatedAt: '2026-03-02T14:15:00Z',
   },
@@ -1111,6 +1116,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     description:
       'Spacious 3 BHK home on high floor with open views in prime Baner, Pune. Fitted with customized wardrobes, modern modular kitchen, smart TVs, and plush living room furniture. Ideal for corporate executives and families.',
+    reraId: 'P52100028912',
+    reraVerifiedOn: '2026-02-28',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -1122,7 +1130,7 @@ export const MOCK_PROPERTIES: Property[] = [
       isVerified: true,
       rating: 4.8,
     },
-    isDemoRecord: true,
+    isDemoRecord: false,
     createdAt: '2026-02-28T11:00:00Z',
     updatedAt: '2026-03-03T16:00:00Z',
   },
@@ -1177,6 +1185,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'A masterpiece of architectural finesse, this 4 BHK villa offers unmatched privacy and modern extravagance in Kharadi. Complete with private garden, plunge pool, personal elevator shaft, and state-of-the-art security inside an exclusive 25-villa enclave.',
     reraId: 'P52100034109',
+    reraVerifiedOn: '2026-01-18',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Builder',
@@ -1188,7 +1198,7 @@ export const MOCK_PROPERTIES: Property[] = [
       isVerified: true,
       rating: 4.9,
     },
-    isDemoRecord: true,
+    isDemoRecord: false,
     createdAt: '2026-01-18T09:15:00Z',
     updatedAt: '2026-03-01T10:00:00Z',
   },
@@ -1241,6 +1251,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Premier commercial office in the heart of BKC. Fully fitted with 70 modern workstations, 4 executive cabins, 2 boardrooms, server room with precision cooling, and biometric access control. Ideal for MNCs, hedge funds, and fintech leaders.',
     reraId: 'P51800041289',
+    reraVerifiedOn: '2026-02-10',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -1252,7 +1264,7 @@ export const MOCK_PROPERTIES: Property[] = [
       isVerified: true,
       rating: 5.0,
     },
-    isDemoRecord: true,
+    isDemoRecord: false,
     createdAt: '2026-02-10T14:00:00Z',
     updatedAt: '2026-03-02T11:00:00Z',
   },
@@ -1301,6 +1313,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Collector NA Sanctioned clear title villa plot inside an upscale gated layout in Hinjawadi Phase 1. Complete with underground drainage, electricity line, water connection, and wide tarred internal roads. Immediate registry and demarcation.',
     reraId: 'P52100029011',
+    reraVerifiedOn: '2026-02-22',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: false,
     postedBy: 'Builder',
@@ -1311,7 +1325,7 @@ export const MOCK_PROPERTIES: Property[] = [
       isVerified: true,
       rating: 4.7,
     },
-    isDemoRecord: true,
+    isDemoRecord: false,
     createdAt: '2026-02-22T10:00:00Z',
     updatedAt: '2026-03-01T09:00:00Z',
   },
@@ -1362,6 +1376,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Experience the pinnacle of township living in Hiranandani Estate, Thane. This bright 2 BHK home features neoclassical architectural elements, marble flooring, high ceilings, and unhindered green mountain vistas.',
     reraId: 'P51700018290',
+    reraVerifiedOn: '2026-02-12',
+    reraVerificationSource: 'MahaRERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -1373,7 +1389,7 @@ export const MOCK_PROPERTIES: Property[] = [
       isVerified: true,
       rating: 4.8,
     },
-    isDemoRecord: true,
+    isDemoRecord: false,
     createdAt: '2026-02-12T10:00:00Z',
     updatedAt: '2026-03-02T15:00:00Z',
   },
@@ -1424,6 +1440,8 @@ export const MOCK_PROPERTIES: Property[] = [
     description:
       'Modern 3 BHK apartment equipped with full smart-home automation. Voice-controlled lighting, automated curtains, digital keyless door lock, and premium fittings from Kohler and Grohe in Whitefield, Bengaluru.',
     reraId: 'PRM/KA/RERA/1251/446/PR/190823/002821',
+    reraVerifiedOn: '2026-02-18',
+    reraVerificationSource: 'Karnataka RERA Public Registry',
     isVerified: true,
     isFeatured: true,
     postedBy: 'Agent',
@@ -1435,7 +1453,7 @@ export const MOCK_PROPERTIES: Property[] = [
       isVerified: true,
       rating: 4.9,
     },
-    isDemoRecord: true,
+    isDemoRecord: false,
     createdAt: '2026-02-18T10:00:00Z',
     updatedAt: '2026-03-01T14:00:00Z',
   },

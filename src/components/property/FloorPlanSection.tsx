@@ -93,6 +93,16 @@ export function FloorPlanSection({
 
   // Room dimension breakdown for current layout
   const roomDimensions = React.useMemo(() => {
+    if (bhkNumber === '1') {
+      return [
+        { label: 'Living & Dining', dim: '16\'6" x 10\'6"' },
+        { label: 'Master Bedroom', dim: '12\'0" x 10\'0"' },
+        { label: 'Modular Kitchen', dim: '8\'6" x 7\'0"' },
+        { label: 'Bathroom Suite', dim: '7\'0" x 4\'6"' },
+        { label: 'Utility Balcony', dim: '6\'6" x 4\'0"' },
+        { label: 'Foyer / Entry', dim: '5\'0" x 4\'0"' },
+      ];
+    }
     if (bhkNumber === '4') {
       return [
         { label: 'Living & Dining', dim: '28\'0" x 17\'0"' },
@@ -114,12 +124,12 @@ export function FloorPlanSection({
       ];
     }
     return [
-      { label: 'Living & Dining', dim: '22\'0" x 14\'6"' },
-      { label: 'Master Suite', dim: '14\'0" x 12\'6"' },
-      { label: 'Bedroom 2', dim: '12\'6" x 11\'0"' },
-      { label: 'Modular Kitchen', dim: '10\'6" x 8\'6"' },
-      { label: 'Master Bath', dim: '8\'0" x 5\'0"' },
-      { label: 'Sundeck Balcony', dim: '16\'0" x 6\'0"' },
+      { label: 'Living & Dining', dim: '20\'0" x 13\'0"' },
+      { label: 'Master Suite', dim: '13\'6" x 11\'6"' },
+      { label: 'Bedroom 2', dim: '11\'6" x 10\'6"' },
+      { label: 'Modular Kitchen', dim: '9\'6" x 8\'0"' },
+      { label: 'Master Bath', dim: '7\'6" x 4\'6"' },
+      { label: 'Sundeck Balcony', dim: '12\'0" x 5\'0"' },
     ];
   }, [bhkNumber]);
 
@@ -300,6 +310,8 @@ export function FloorPlanSection({
               <FloorPlan4BHK config={currentConfig} />
             ) : bhkNumber === '3' ? (
               <FloorPlan3BHK config={currentConfig} />
+            ) : bhkNumber === '1' ? (
+              <FloorPlan1BHK config={currentConfig} />
             ) : (
               <FloorPlan2BHK config={currentConfig} />
             )}
@@ -356,6 +368,8 @@ export function FloorPlanSection({
                   <FloorPlan4BHK config={currentConfig} isEnlarged />
                 ) : bhkNumber === '3' ? (
                   <FloorPlan3BHK config={currentConfig} isEnlarged />
+                ) : bhkNumber === '1' ? (
+                  <FloorPlan1BHK config={currentConfig} isEnlarged />
                 ) : (
                   <FloorPlan2BHK config={currentConfig} isEnlarged />
                 )}
@@ -398,9 +412,94 @@ export function FloorPlanSection({
 }
 
 // =========================================================================
-// VECTOR ARCHITECTURAL FLOOR PLAN BLUEPRINTS (2 BHK, 3 BHK, 4 BHK)
+// VECTOR ARCHITECTURAL FLOOR PLAN BLUEPRINTS (1 BHK, 2 BHK, 3 BHK, 4 BHK)
 // Scalable, crystal-clear CAD vector drawings
 // =========================================================================
+
+function FloorPlan1BHK({ config, isEnlarged = false }: { config: PropertyConfiguration; isEnlarged?: boolean }) {
+  return (
+    <svg
+      viewBox="0 0 760 480"
+      className="w-full h-auto drop-shadow-sm select-none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Outer Boundary Wall */}
+      <rect x="20" y="20" width="720" height="440" rx="8" fill="#FFFFFF" stroke="#1E293B" strokeWidth="4" />
+
+      {/* ================= LIVING & DINING ROOM (Left 50%) ================= */}
+      <rect x="20" y="140" width="370" height="230" fill="#F8FAFC" stroke="#334155" strokeWidth="2.5" />
+      <rect x="40" y="170" width="45" height="110" rx="4" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1.5" />
+      <rect x="95" y="190" width="55" height="70" rx="3" fill="#F1F5F9" stroke="#CBD5E1" strokeWidth="1" />
+      <rect x="220" y="170" width="80" height="50" rx="4" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1.5" />
+      <circle cx="205" cy="195" r="6" fill="#CBD5E1" />
+      <circle cx="315" cy="195" r="6" fill="#CBD5E1" />
+      <text x="180" y="270" textAnchor="middle" className="text-[13px] font-bold fill-slate-800 font-sans">
+        LIVING &amp; DINING LOUNGE
+      </text>
+      <text x="180" y="288" textAnchor="middle" className="text-[11px] fill-slate-500 font-sans">
+        16&apos;6&quot; &times; 10&apos;6&quot; (173 sq.ft)
+      </text>
+
+      {/* ================= PRIVATE SUNDECK BALCONY (Bottom-Left) ================= */}
+      <rect x="20" y="370" width="370" height="90" fill="#FEF3C7" fillOpacity="0.45" stroke="#D97706" strokeWidth="2" strokeDasharray="4 2" />
+      <line x1="20" y1="395" x2="390" y2="395" stroke="#FDE68A" strokeWidth="1" />
+      <line x1="20" y1="420" x2="390" y2="420" stroke="#FDE68A" strokeWidth="1" />
+      <line x1="20" y1="445" x2="390" y2="445" stroke="#FDE68A" strokeWidth="1" />
+      <text x="195" y="420" textAnchor="middle" className="text-[12px] font-bold fill-amber-900 font-sans">
+        SUNDECK BALCONY (4&apos;0&quot; Wide)
+      </text>
+
+      {/* ================= ENTRY FOYER (Top-Left) ================= */}
+      <rect x="20" y="20" width="180" height="120" fill="#F1F5F9" stroke="#334155" strokeWidth="2" />
+      <text x="110" y="75" textAnchor="middle" className="text-[12px] font-bold fill-slate-700 font-sans">
+        ENTRY FOYER
+      </text>
+      <text x="110" y="92" textAnchor="middle" className="text-[10px] fill-slate-500 font-sans">
+        Vastu East Entry
+      </text>
+      <path d="M 35 125 A 30 30 0 0 1 65 95" fill="none" stroke="#C6383B" strokeWidth="2" strokeDasharray="3 3" />
+      <line x1="35" y1="125" x2="65" y2="125" stroke="#C6383B" strokeWidth="2" />
+
+      {/* ================= MODULAR KITCHEN & UTILITY (Top-Right) ================= */}
+      <rect x="200" y="20" width="190" height="120" fill="#F8FAFC" stroke="#334155" strokeWidth="2" />
+      <rect x="205" y="25" width="180" height="24" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1" />
+      <circle cx="230" cy="37" r="6" fill="#CBD5E1" />
+      <circle cx="250" cy="37" r="6" fill="#CBD5E1" />
+      <text x="295" y="80" textAnchor="middle" className="text-[12px] font-bold fill-slate-800 font-sans">
+        MODULAR KITCHEN
+      </text>
+      <text x="295" y="96" textAnchor="middle" className="text-[10px] fill-slate-500 font-sans">
+        8&apos;6&quot; &times; 7&apos;0&quot; + Dry Balcony
+      </text>
+
+      {/* ================= BATHROOM SUITE (Center-Right) ================= */}
+      <rect x="390" y="20" width="350" height="140" fill="#EFF6FF" stroke="#334155" strokeWidth="2" />
+      <circle cx="430" cy="70" r="14" fill="#DBEAFE" stroke="#93C5FD" strokeWidth="1.5" />
+      <rect x="670" y="40" width="55" height="70" rx="3" fill="#DBEAFE" stroke="#93C5FD" strokeWidth="1" />
+      <text x="560" y="85" textAnchor="middle" className="text-[12px] font-bold fill-slate-800 font-sans">
+        BATHROOM SUITE
+      </text>
+      <text x="560" y="102" textAnchor="middle" className="text-[10px] fill-slate-500 font-sans">
+        7&apos;0&quot; &times; 4&apos;6&quot; (Premium Fittings)
+      </text>
+
+      {/* ================= SINGLE MASTER BEDROOM (Bottom-Right) ================= */}
+      <rect x="390" y="160" width="350" height="300" fill="#F1F5F9" stroke="#334155" strokeWidth="2.5" />
+      <rect x="490" y="220" width="115" height="135" rx="4" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1.5" />
+      <rect x="500" y="228" width="42" height="25" rx="2" fill="#FFFFFF" />
+      <rect x="552" y="228" width="42" height="25" rx="2" fill="#FFFFFF" />
+      <rect x="465" y="225" width="20" height="25" rx="2" fill="#CBD5E1" />
+      <rect x="610" y="225" width="20" height="25" rx="2" fill="#CBD5E1" />
+      <rect x="670" y="200" width="50" height="180" rx="3" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1" />
+      <text x="550" y="400" textAnchor="middle" className="text-[13px] font-bold fill-slate-900 font-sans">
+        MASTER BEDROOM
+      </text>
+      <text x="550" y="418" textAnchor="middle" className="text-[11px] fill-slate-500 font-sans">
+        12&apos;0&quot; &times; 10&apos;0&quot; + Wardrobe Niche
+      </text>
+    </svg>
+  );
+}
 
 function FloorPlan2BHK({ config, isEnlarged = false }: { config: PropertyConfiguration; isEnlarged?: boolean }) {
   return (

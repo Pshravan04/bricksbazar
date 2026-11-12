@@ -83,6 +83,8 @@ export interface Property {
   highlights: string[];
   description: string;
   reraId?: string;
+  reraVerifiedOn?: string;
+  reraVerificationSource?: string;
   isVerified: boolean;
   isFeatured?: boolean;
   postedBy: PostedBy;

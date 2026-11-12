@@ -69,15 +69,72 @@ export function LocationWithMap({ location, propertyTitle, customLandmarks }: Lo
       ];
     }
 
-    // Default clean normal list
-    return [
-      { name: 'Metro / Rapid Transit Station', distance: '450 meters (5 mins walk)' },
-      { name: 'International Airport (BOM / PNQ / BLR)', distance: '8.2 km (20 mins drive)' },
-      { name: 'Top ICSE / IB World School', distance: '1.2 km (6 mins drive)' },
-      { name: 'Multi-Speciality Hospital & Emergency Care', distance: '1.8 km (8 mins drive)' },
-      { name: 'Luxury High Street Mall & Multiplex', distance: '900 meters (3 mins drive)' },
-      { name: 'Central Corporate IT Tech Park / Business District', distance: '3.5 km (10 mins drive)' },
-    ];
+    if (locLower.includes('goregaon') || locLower.includes('malad') || locLower.includes('borivali')) {
+      return [
+        { name: 'Goregaon / Borivali Railway Station & Metro Line 2A', distance: '400 meters (5 mins walk)' },
+        { name: 'Western Express Highway (WEH) & Oberoi Mall', distance: '1.6 km (5 mins drive)' },
+        { name: 'Vibgyor High & Ryan International School', distance: '1.2 km (4 mins drive)' },
+        { name: 'Lifeline Speciality Hospital & Trauma Care', distance: '850 meters (3 mins drive)' },
+        { name: 'Mindspace IT & Commercial Park', distance: '2.4 km (8 mins drive)' },
+        { name: 'Chhatrapati Shivaji Maharaj International Airport (T2)', distance: '10.5 km (22 mins drive)' },
+      ];
+    }
+
+    if (locLower.includes('vikhroli') || locLower.includes('kanjurmarg') || locLower.includes('ghatkopar') || locLower.includes('asalpha')) {
+      return [
+        { name: 'Eastern Express Highway & Asalpha/Ghatkopar Metro 1', distance: '450 meters (5 mins walk)' },
+        { name: 'Kanjurmarg & Vikhroli Suburban Railway Stations', distance: '600 meters (7 mins walk)' },
+        { name: 'R City Mall & Galleria High Street', distance: '2.5 km (7 mins drive)' },
+        { name: 'Godrej Memorial Multi-Speciality Hospital', distance: '900 meters (3 mins drive)' },
+        { name: 'Powai IT Corridor & Hiranandani Business Park', distance: '3.2 km (9 mins drive)' },
+        { name: 'Chhatrapati Shivaji Maharaj International Airport (T2)', distance: '8.2 km (18 mins drive)' },
+      ];
+    }
+
+    if (locLower.includes('mahim') || locLower.includes('dadar') || locLower.includes('worli')) {
+      return [
+        { name: 'Mahim Junction & Western / Harbour Railway Lines', distance: '500 meters (6 mins walk)' },
+        { name: 'Bandra-Worli Sea Link Entrance', distance: '1.2 km (4 mins drive)' },
+        { name: 'Shivaji Park Cultural Enclave & Promenade', distance: '900 meters (3 mins drive)' },
+        { name: 'P. D. Hinduja National Hospital & Medical Research', distance: '1.3 km (4 mins drive)' },
+        { name: 'Bombay Scottish School (Mahim)', distance: '800 meters (3 mins drive)' },
+        { name: 'Lower Parel Commercial & Palladium District', distance: '4.2 km (12 mins drive)' },
+      ];
+    }
+
+    if (locLower.includes('bkc') || locLower.includes('bandra kurla')) {
+      return [
+        { name: 'Jio World Centre & Convention Hub', distance: '250 meters (3 mins walk)' },
+        { name: 'Metro Line 3 Underground (BKC Station)', distance: '400 meters (5 mins walk)' },
+        { name: 'Asian Heart Institute & Research Centre', distance: '800 meters (3 mins drive)' },
+        { name: 'Dhirubhai Ambani International School', distance: '650 meters (2 mins drive)' },
+        { name: 'Bandra-Worli Sea Link Connector', distance: '2.5 km (6 mins drive)' },
+        { name: 'Chhatrapati Shivaji Maharaj International Airport (T2)', distance: '6.2 km (14 mins drive)' },
+      ];
+    }
+
+    if (locLower.includes('baner') || locLower.includes('kharadi') || locLower.includes('hinjawadi') || (location.city || '').toLowerCase() === 'pune') {
+      return [
+        { name: 'Balewadi High Street / EON Free Zone IT Hub', distance: '1.2 km (4 mins drive)' },
+        { name: 'Mumbai-Pune Expressway Link Road', distance: '2.8 km (7 mins drive)' },
+        { name: 'Jupiter Multi-Speciality Hospital', distance: '2.1 km (6 mins drive)' },
+        { name: 'The Orchid International School', distance: '1.5 km (4 mins drive)' },
+        { name: 'Pune International Airport (Lohegaon - PNQ)', distance: '11.5 km (25 mins drive)' },
+      ];
+    }
+
+    if (locLower.includes('whitefield') || (location.city || '').toLowerCase() === 'bengaluru') {
+      return [
+        { name: 'ITPL Metro Station (Namma Metro Purple Line)', distance: '300 meters (4 mins walk)' },
+        { name: 'International Tech Park Bengaluru (ITPB)', distance: '450 meters (5 mins walk)' },
+        { name: 'Manipal Hospital Whitefield', distance: '1.6 km (5 mins drive)' },
+        { name: 'The Deens Academy School', distance: '2.1 km (6 mins drive)' },
+        { name: 'Kempegowda International Airport (BLR)', distance: '36 km via SH-104 Expressway' },
+      ];
+    }
+
+    // No verified landmark data for this specific locality - return empty so no generic placeholders are shown
+    return [];
   }, [location, customLandmarks]);
 
   const handleCopyCoords = () => {
@@ -193,33 +250,35 @@ export function LocationWithMap({ location, propertyTitle, customLandmarks }: Lo
         {/* =========================================================================
             2. KEY INFRASTRUCTURE & COMMUTE DISTANCES — NORMAL CLEAN LIST
             ========================================================================= */}
-        <div className="space-y-3 pt-1">
-          <div className="flex items-center justify-between">
-            <h4 className="text-sm font-bold text-brand-text">
-              Key Infrastructure &amp; Commute Distances
-            </h4>
-            <span className="text-xs text-brand-text-secondary">
-              {landmarks.length} Nearby Landmarks
-            </span>
-          </div>
+        {landmarks.length > 0 && (
+          <div className="space-y-3 pt-1">
+            <div className="flex items-center justify-between">
+              <h4 className="text-sm font-bold text-brand-text">
+                Key Infrastructure &amp; Commute Distances
+              </h4>
+              <span className="text-xs text-brand-text-secondary">
+                {landmarks.length} Nearby Landmarks
+              </span>
+            </div>
 
-          <div className="space-y-2.5">
-            {landmarks.map((lm, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-between p-3 bg-brand-bg rounded-lg border border-brand-border text-xs hover:border-brand-border/80 transition"
-              >
-                <div className="flex items-center gap-2.5 font-medium text-brand-text">
-                  <MapPin className="w-4 h-4 text-brand-red flex-shrink-0" />
-                  <span>{lm.name}</span>
+            <div className="space-y-2.5">
+              {landmarks.map((lm, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center justify-between p-3 bg-brand-bg rounded-lg border border-brand-border text-xs hover:border-brand-border/80 transition"
+                >
+                  <div className="flex items-center gap-2.5 font-medium text-brand-text">
+                    <MapPin className="w-4 h-4 text-brand-red flex-shrink-0" />
+                    <span>{lm.name}</span>
+                  </div>
+                  <span className="font-bold text-brand-text-secondary whitespace-nowrap ml-3">
+                    {lm.distance}
+                  </span>
                 </div>
-                <span className="font-bold text-brand-text-secondary whitespace-nowrap ml-3">
-                  {lm.distance}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
