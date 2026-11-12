@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 import { cn, formatINR, formatArea } from '@/lib/utils';
 import { PropertyConfiguration } from '@/types';
-import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 
 interface FloorPlanSectionProps {
@@ -92,38 +91,69 @@ export function FloorPlanSection({
   // Determine BHK type for SVG selection
   const bhkNumber = currentConfig?.bhk?.match(/\d+/)?.[0] || '2';
 
+  // Room dimension breakdown for current layout
+  const roomDimensions = React.useMemo(() => {
+    if (bhkNumber === '4') {
+      return [
+        { label: 'Living & Dining', dim: '28\'0" x 17\'0"' },
+        { label: 'Master Suite', dim: '18\'0" x 15\'0"' },
+        { label: 'Bedroom 2 Suite', dim: '14\'0" x 12\'6"' },
+        { label: 'Bedroom 3 Suite', dim: '13\'6" x 12\'0"' },
+        { label: 'Chef Kitchen', dim: '12\'6" x 9\'6"' },
+        { label: 'Wrap Sundeck', dim: '28\'0" x 7\'0"' },
+      ];
+    }
+    if (bhkNumber === '3') {
+      return [
+        { label: 'Living & Dining', dim: '25\'0" x 15\'6"' },
+        { label: 'Master Suite', dim: '16\'0" x 13\'6"' },
+        { label: 'Guest Bedroom 2', dim: '13\'0" x 11\'6"' },
+        { label: 'Kids Bedroom 3', dim: '11\'6" x 11\'0"' },
+        { label: 'Kitchen & Dry', dim: '11\'0" x 8\'6"' },
+        { label: 'Sundeck Balcony', dim: '24\'0" x 6\'0"' },
+      ];
+    }
+    return [
+      { label: 'Living & Dining', dim: '22\'0" x 14\'6"' },
+      { label: 'Master Suite', dim: '14\'0" x 12\'6"' },
+      { label: 'Bedroom 2', dim: '12\'6" x 11\'0"' },
+      { label: 'Modular Kitchen', dim: '10\'6" x 8\'6"' },
+      { label: 'Master Bath', dim: '8\'0" x 5\'0"' },
+      { label: 'Sundeck Balcony', dim: '16\'0" x 6\'0"' },
+    ];
+  }, [bhkNumber]);
+
   return (
-    <div className="bg-white rounded-card border border-brand-border p-6 shadow-card space-y-6">
-      {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-brand-border pb-4">
-        <div>
-          <div className="flex items-center gap-2">
-            <h3 className="text-lg font-bold text-brand-text">Floor Plans &amp; Layouts</h3>
-            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-              RERA Sanctioned
-            </span>
-          </div>
-          <p className="text-xs text-brand-text-secondary mt-1">
-            Architectural schematic plans with exact carpet areas, room dimensions, and Vastu compliance.
-          </p>
+    <div className="bg-white rounded-card border border-brand-border p-5 sm:p-6 shadow-card space-y-4">
+      {/* 1. Header Bar: Title, RERA Badge & Quick Action Buttons */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-brand-border pb-3.5">
+        <div className="flex items-center gap-2.5 flex-wrap">
+          <h3 className="text-base sm:text-lg font-bold text-brand-text">Floor Plans &amp; Layouts</h3>
+          <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+            RERA Approved
+          </span>
+          <span className="hidden md:inline-block text-xs text-brand-text-secondary">
+            • Vastu Compliant 2D Architectural Scheme
+          </span>
         </div>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2 self-start sm:self-auto flex-wrap">
+        <div className="flex items-center gap-2 self-start sm:self-auto">
           <button
             type="button"
             onClick={handleDownload}
-            className="px-3 py-1.5 rounded-button text-xs font-semibold border border-brand-border bg-brand-bg hover:bg-white text-brand-text transition flex items-center gap-1.5 shadow-2xs"
+            className="px-2.5 py-1.5 rounded-button text-xs font-semibold border border-brand-border bg-brand-bg hover:bg-white text-brand-text transition flex items-center gap-1.5 shadow-2xs"
+            title="Download PDF"
           >
             {downloadSuccess ? (
               <>
                 <Check className="w-3.5 h-3.5 text-brand-success" />
-                <span className="text-brand-success">PDF Brochure Ready</span>
+                <span className="text-brand-success">Downloaded</span>
               </>
             ) : (
               <>
                 <FileDown className="w-3.5 h-3.5 text-brand-red" />
-                <span>Download Plan</span>
+                <span>Brochure</span>
               </>
             )}
           </button>
@@ -131,17 +161,17 @@ export function FloorPlanSection({
           <button
             type="button"
             onClick={() => setIsModalOpen(true)}
-            className="px-3.5 py-1.5 rounded-button text-xs font-bold bg-brand-text text-white hover:bg-brand-red transition flex items-center gap-1.5 shadow-2xs"
+            className="px-3 py-1.5 rounded-button text-xs font-bold bg-brand-text text-white hover:bg-brand-red transition flex items-center gap-1.5 shadow-2xs"
           >
             <Maximize2 className="w-3.5 h-3.5" />
-            <span>Enlarge Layout</span>
+            <span>Enlarge Plan</span>
           </button>
         </div>
       </div>
 
-      {/* Configuration Tabs Bar */}
+      {/* 2. Compact Configuration Selector Pills */}
       {configList.length > 1 && (
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
           {configList.map((cfg) => {
             const isSelected = cfg.id === activeId;
             return (
@@ -150,147 +180,144 @@ export function FloorPlanSection({
                 type="button"
                 onClick={() => handleSelect(cfg.id)}
                 className={cn(
-                  'px-4 py-2 rounded-lg text-xs font-bold border transition text-left whitespace-nowrap flex items-center gap-3',
+                  'px-3 py-1.5 rounded-md text-xs font-bold border transition flex items-center gap-2 shrink-0',
                   isSelected
-                    ? 'bg-brand-red text-white border-brand-red shadow-sm'
+                    ? 'bg-brand-red text-white border-brand-red shadow-xs'
                     : 'bg-brand-bg text-brand-text border-brand-border hover:bg-white'
                 )}
               >
-                <div>
-                  <span className="block">{cfg.bhk}</span>
-                  <span
-                    className={cn(
-                      'text-[11px] font-normal block',
-                      isSelected ? 'text-white/90' : 'text-brand-text-secondary'
-                    )}
-                  >
-                    {formatArea(cfg.carpetArea)}
-                  </span>
-                </div>
-                <div
-                  className={cn(
-                    'pl-2.5 border-l text-[11px] font-bold',
-                    isSelected ? 'border-white/30 text-white' : 'border-brand-border text-brand-text'
-                  )}
-                >
+                <span>{cfg.bhk}</span>
+                <span className={cn('text-[11px] font-normal', isSelected ? 'text-white/90' : 'text-brand-text-secondary')}>
+                  ({formatArea(cfg.carpetArea)})
+                </span>
+                <span className={cn('pl-1.5 border-l text-[11px] font-semibold', isSelected ? 'border-white/30 text-white' : 'border-brand-border text-brand-text')}>
                   {formatINR(cfg.price, isRent)}
-                </div>
+                </span>
               </button>
             );
           })}
         </div>
       )}
 
-      {/* Key Layout Dimensions Badges Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div className="p-3 bg-brand-bg rounded-lg border border-brand-border text-center">
-          <span className="text-[10px] text-brand-text-secondary uppercase font-semibold block">Carpet Area</span>
-          <span className="text-sm font-bold text-brand-text mt-0.5 block">{formatArea(currentConfig.carpetArea)}</span>
-          <span className="text-[10px] text-brand-text-secondary block mt-0.5">100% Usable Space</span>
-        </div>
-        <div className="p-3 bg-brand-bg rounded-lg border border-brand-border text-center">
-          <span className="text-[10px] text-brand-text-secondary uppercase font-semibold block">Super Built-Up</span>
-          <span className="text-sm font-bold text-brand-text mt-0.5 block">{formatArea(currentConfig.superBuiltUpArea)}</span>
-          <span className="text-[10px] text-brand-text-secondary block mt-0.5">Approx. {Math.round((currentConfig.carpetArea / currentConfig.superBuiltUpArea) * 100)}% Efficiency</span>
-        </div>
-        <div className="p-3 bg-brand-bg rounded-lg border border-brand-border text-center">
-          <span className="text-[10px] text-brand-text-secondary uppercase font-semibold block">Bathrooms</span>
-          <span className="text-sm font-bold text-brand-text mt-0.5 block">{currentConfig.bathrooms} En-suite</span>
-          <span className="text-[10px] text-brand-text-secondary block mt-0.5">Branded Sanitaryware</span>
-        </div>
-        <div className="p-3 bg-brand-bg rounded-lg border border-brand-border text-center">
-          <span className="text-[10px] text-brand-text-secondary uppercase font-semibold block">Balconies &amp; Facing</span>
-          <span className="text-sm font-bold text-brand-text mt-0.5 block">{currentConfig.balconies} Sundecks</span>
-          <span className="text-[10px] text-brand-text-secondary block mt-0.5">East / Vastu Compliant</span>
-        </div>
-      </div>
-
-      {/* Architectural CAD Floor Plan Visualizer */}
-      <div className="relative rounded-card overflow-hidden border border-brand-border bg-[#F8FAFC] p-4 sm:p-8 flex flex-col items-center justify-center min-h-[360px] sm:min-h-[440px] group">
-        {/* Subtle CAD Blueprint Grid Background */}
-        <div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle, #0F172A 1px, transparent 1px), linear-gradient(to right, #0F172A 1px, transparent 1px), linear-gradient(to bottom, #0F172A 1px, transparent 1px)',
-            backgroundSize: '24px 24px',
-          }}
-        />
-
-        {/* Top Floating Badge Bar */}
-        <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-white border border-brand-border text-brand-text shadow-xs">
-            <Layers className="w-3.5 h-3.5 text-brand-red" />
-            {currentConfig.bhk} Architectural Scheme
-          </span>
-          <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-white/80 border border-brand-border/80 text-brand-text-secondary backdrop-blur-xs">
-            Scale: 1:100 • Metric &amp; Imperial
-          </span>
-        </div>
-
-        {/* Compass Rose in Top-Right */}
-        <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 bg-white/90 border border-brand-border rounded-lg px-2.5 py-1 text-[11px] font-bold text-brand-text shadow-xs">
-          <Compass className="w-4 h-4 text-brand-red animate-spin-slow" />
-          <span>North</span>
-        </div>
-
-        {/* Dynamic Architectural Vector Floor Plan */}
-        <div
-          className="relative w-full max-w-2xl cursor-pointer transition-transform duration-300 hover:scale-[1.01]"
-          onClick={() => setIsModalOpen(true)}
-          title="Click to enlarge floor plan"
-        >
-          {bhkNumber === '4' ? (
-            <FloorPlan4BHK config={currentConfig} />
-          ) : bhkNumber === '3' ? (
-            <FloorPlan3BHK config={currentConfig} />
-          ) : (
-            <FloorPlan2BHK config={currentConfig} />
-          )}
-        </div>
-
-        {/* Bottom Floating Bar */}
-        <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2 pt-4 mt-2 border-t border-brand-border/60 z-10 text-[11px] text-brand-text-secondary">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-brand-text">Note:</span>
-            <span>All measurements are indicative and subject to RERA approvals. Layouts may vary per floor.</span>
+      {/* 3. Optimized Space-Efficient 2-Column Split: Specs on Left, Drawing on Right */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
+        {/* Left Column (5 Cols): Compact Specs & Room Dimension Breakdown */}
+        <div className="lg:col-span-5 flex flex-col justify-between gap-3.5">
+          {/* 4 Key Dimensions Grid */}
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            <div className="p-2.5 bg-brand-bg rounded-lg border border-brand-border">
+              <span className="text-[10px] text-brand-text-secondary uppercase font-semibold block">Carpet Area</span>
+              <span className="text-sm font-bold text-brand-text mt-0.5 block">{formatArea(currentConfig.carpetArea)}</span>
+              <span className="text-[10px] text-brand-text-secondary block">100% Usable Space</span>
+            </div>
+            <div className="p-2.5 bg-brand-bg rounded-lg border border-brand-border">
+              <span className="text-[10px] text-brand-text-secondary uppercase font-semibold block">Super Built-Up</span>
+              <span className="text-sm font-bold text-brand-text mt-0.5 block">{formatArea(currentConfig.superBuiltUpArea)}</span>
+              <span className="text-[10px] text-brand-text-secondary block">
+                {Math.round((currentConfig.carpetArea / currentConfig.superBuiltUpArea) * 100)}% Efficiency
+              </span>
+            </div>
+            <div className="p-2.5 bg-brand-bg rounded-lg border border-brand-border">
+              <span className="text-[10px] text-brand-text-secondary uppercase font-semibold block">Bathrooms</span>
+              <span className="text-sm font-bold text-brand-text mt-0.5 block">{currentConfig.bathrooms} En-Suite</span>
+              <span className="text-[10px] text-brand-text-secondary block">Luxury Fittings</span>
+            </div>
+            <div className="p-2.5 bg-brand-bg rounded-lg border border-brand-border">
+              <span className="text-[10px] text-brand-text-secondary uppercase font-semibold block">Balconies &amp; Vastu</span>
+              <span className="text-sm font-bold text-brand-text mt-0.5 block">{currentConfig.balconies} Sundecks</span>
+              <span className="text-[10px] text-brand-text-secondary block">East Facing</span>
+            </div>
           </div>
+
+          {/* Room Dimensions Compact Table */}
+          <div className="p-3 bg-brand-bg/60 rounded-lg border border-brand-border">
+            <span className="text-[10px] font-bold text-brand-text uppercase tracking-wider block mb-2">
+              Key Room Dimensions
+            </span>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              {roomDimensions.map((item, idx) => (
+                <div key={idx} className="flex items-center justify-between py-0.5 border-b border-brand-border/40 text-[11px]">
+                  <span className="text-brand-text-secondary truncate">{item.label}:</span>
+                  <span className="font-bold text-brand-text whitespace-nowrap ml-1">{item.dim}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Sample Flat Tour CTA Button */}
           <button
             type="button"
-            onClick={() => setIsModalOpen(true)}
-            className="text-brand-red font-bold hover:underline flex items-center gap-1"
+            onClick={() => {
+              if (onScheduleVisit) {
+                onScheduleVisit();
+              } else {
+                window.scrollTo({ top: 300, behavior: 'smooth' });
+              }
+            }}
+            className="w-full py-2 px-3 rounded-button text-xs font-bold border border-brand-red/30 bg-brand-red-light/40 hover:bg-brand-red hover:text-white text-brand-red transition flex items-center justify-center gap-2"
           >
-            <Eye className="w-3.5 h-3.5" />
-            <span>Click to View Fullscreen</span>
+            <Calendar className="w-3.5 h-3.5" />
+            <span>Tour Actual Sample Flat on Site</span>
           </button>
         </div>
-      </div>
 
-      {/* Booking Consultation Strip */}
-      <div className="bg-brand-bg rounded-lg border border-brand-border p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <div className="space-y-0.5">
-          <span className="text-xs font-bold text-brand-text block">
-            Want to see the actual sample flat for this {currentConfig.bhk}?
-          </span>
-          <span className="text-[11px] text-brand-text-secondary block">
-            Experience the double-height ceiling, daylight exposure, and finishings in person.
-          </span>
+        {/* Right Column (7 Cols): Architectural CAD Blueprint Canvas */}
+        <div className="lg:col-span-7 relative rounded-card overflow-hidden border border-brand-border bg-[#F8FAFC] p-3 sm:p-5 flex flex-col items-center justify-center min-h-[290px] sm:min-h-[330px] group">
+          {/* Subtle CAD Blueprint Grid */}
+          <div
+            className="absolute inset-0 opacity-[0.05] pointer-events-none"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle, #0F172A 1px, transparent 1px), linear-gradient(to right, #0F172A 1px, transparent 1px), linear-gradient(to bottom, #0F172A 1px, transparent 1px)',
+              backgroundSize: '20px 20px',
+            }}
+          />
+
+          {/* Top Floating Badge Bar */}
+          <div className="absolute top-2.5 left-2.5 z-10 flex items-center gap-1.5">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-white/95 border border-brand-border text-brand-text shadow-2xs backdrop-blur-xs">
+              <Layers className="w-3 h-3 text-brand-red" />
+              {currentConfig.bhk} Layout Scheme
+            </span>
+            <span className="hidden sm:inline-flex items-center text-[10px] font-semibold text-brand-text-secondary">
+              Scale 1:100
+            </span>
+          </div>
+
+          {/* Compass Rose */}
+          <div className="absolute top-2.5 right-2.5 z-10 flex items-center gap-1 bg-white/95 border border-brand-border rounded px-2 py-0.5 text-[10px] font-bold text-brand-text shadow-2xs backdrop-blur-xs">
+            <Compass className="w-3 h-3 text-brand-red" />
+            <span>North</span>
+          </div>
+
+          {/* Vector Blueprint Drawing */}
+          <div
+            className="relative w-full max-w-xl cursor-pointer transition-transform duration-300 hover:scale-[1.01] my-auto"
+            onClick={() => setIsModalOpen(true)}
+            title="Click to enlarge floor plan"
+          >
+            {bhkNumber === '4' ? (
+              <FloorPlan4BHK config={currentConfig} />
+            ) : bhkNumber === '3' ? (
+              <FloorPlan3BHK config={currentConfig} />
+            ) : (
+              <FloorPlan2BHK config={currentConfig} />
+            )}
+          </div>
+
+          {/* Bottom Floating Hint */}
+          <div className="w-full flex items-center justify-between pt-2 border-t border-brand-border/40 text-[10px] text-brand-text-secondary z-10">
+            <span>Measurements subject to MahaRERA sanction</span>
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(true)}
+              className="text-brand-red font-bold hover:underline flex items-center gap-1"
+            >
+              <Eye className="w-3 h-3" />
+              <span>Full Screen</span>
+            </button>
+          </div>
         </div>
-        <Button
-          variant="outline"
-          size="sm"
-          className="text-xs font-bold gap-1.5 flex-shrink-0"
-          onClick={() => {
-            if (onScheduleVisit) {
-              onScheduleVisit();
-            } else {
-              window.scrollTo({ top: 300, behavior: 'smooth' });
-            }
-          }}
-        >
-          <Calendar className="w-3.5 h-3.5 text-brand-red" />
-          Schedule Sample Flat Visit
-        </Button>
       </div>
 
       {/* Fullscreen Lightbox Modal */}
@@ -335,28 +362,18 @@ export function FloorPlanSection({
               </div>
             </div>
 
-            {/* Room Dimensions Breakdown Table */}
+            {/* Room Dimensions Breakdown Table in Modal */}
             <div className="space-y-2">
               <h4 className="text-xs font-bold text-brand-text uppercase tracking-wider">
-                Room Dimensions Breakdown
+                Full Room Dimensions Breakdown
               </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
-                <div className="p-2.5 rounded bg-brand-bg border border-brand-border">
-                  <span className="text-brand-text-secondary block text-[10px] uppercase font-semibold">Living &amp; Dining</span>
-                  <span className="font-bold text-brand-text block mt-0.5">22&apos;0&quot; &times; 14&apos;6&quot;</span>
-                </div>
-                <div className="p-2.5 rounded bg-brand-bg border border-brand-border">
-                  <span className="text-brand-text-secondary block text-[10px] uppercase font-semibold">Master Bedroom</span>
-                  <span className="font-bold text-brand-text block mt-0.5">14&apos;0&quot; &times; 12&apos;6&quot;</span>
-                </div>
-                <div className="p-2.5 rounded bg-brand-bg border border-brand-border">
-                  <span className="text-brand-text-secondary block text-[10px] uppercase font-semibold">Bedroom 2</span>
-                  <span className="font-bold text-brand-text block mt-0.5">12&apos;6&quot; &times; 11&apos;0&quot;</span>
-                </div>
-                <div className="p-2.5 rounded bg-brand-bg border border-brand-border">
-                  <span className="text-brand-text-secondary block text-[10px] uppercase font-semibold">Kitchen &amp; Utility</span>
-                  <span className="font-bold text-brand-text block mt-0.5">10&apos;6&quot; &times; 8&apos;6&quot;</span>
-                </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                {roomDimensions.map((item, idx) => (
+                  <div key={idx} className="p-2 rounded bg-brand-bg border border-brand-border flex items-center justify-between">
+                    <span className="text-brand-text-secondary text-[11px]">{item.label}</span>
+                    <span className="font-bold text-brand-text">{item.dim}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -414,7 +431,6 @@ function FloorPlan2BHK({ config, isEnlarged = false }: { config: PropertyConfigu
 
       {/* ================= PRIVATE SUNDECK BALCONY (Bottom-Left) ================= */}
       <rect x="20" y="370" width="360" height="90" fill="#FEF3C7" fillOpacity="0.45" stroke="#D97706" strokeWidth="2" strokeDasharray="4 2" />
-      {/* Deck floor slats */}
       <line x1="20" y1="395" x2="380" y2="395" stroke="#FDE68A" strokeWidth="1" />
       <line x1="20" y1="420" x2="380" y2="420" stroke="#FDE68A" strokeWidth="1" />
       <line x1="20" y1="445" x2="380" y2="445" stroke="#FDE68A" strokeWidth="1" />
@@ -430,13 +446,11 @@ function FloorPlan2BHK({ config, isEnlarged = false }: { config: PropertyConfigu
       <text x="105" y="92" textAnchor="middle" className="text-[10px] fill-slate-500 font-sans">
         Vastu East Entry
       </text>
-      {/* Door Swing Arrow */}
       <path d="M 35 125 A 30 30 0 0 1 65 95" fill="none" stroke="#C6383B" strokeWidth="2" strokeDasharray="3 3" />
       <line x1="35" y1="125" x2="65" y2="125" stroke="#C6383B" strokeWidth="2" />
 
       {/* ================= MODULAR KITCHEN & UTILITY (Top-Center) ================= */}
       <rect x="190" y="20" width="190" height="120" fill="#F8FAFC" stroke="#334155" strokeWidth="2" />
-      {/* Kitchen Counter L-shape */}
       <rect x="195" y="25" width="180" height="24" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1" />
       <rect x="350" y="49" width="25" height="85" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1" />
       <circle cx="230" cy="37" r="7" fill="#CBD5E1" />
@@ -450,11 +464,9 @@ function FloorPlan2BHK({ config, isEnlarged = false }: { config: PropertyConfigu
 
       {/* ================= BEDROOM 2 / GUEST BEDROOM (Top-Right) ================= */}
       <rect x="380" y="20" width="360" height="200" fill="#F8FAFC" stroke="#334155" strokeWidth="2.5" />
-      {/* Bed */}
       <rect x="490" y="30" width="95" height="115" rx="4" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1.5" />
       <rect x="500" y="35" width="35" height="22" rx="2" fill="#FFFFFF" />
       <rect x="540" y="35" width="35" height="22" rx="2" fill="#FFFFFF" />
-      {/* Wardrobe */}
       <rect x="685" y="30" width="45" height="140" rx="3" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1" />
       <text x="560" y="170" textAnchor="middle" className="text-[13px] font-bold fill-slate-800 font-sans">
         BEDROOM 2
@@ -465,14 +477,11 @@ function FloorPlan2BHK({ config, isEnlarged = false }: { config: PropertyConfigu
 
       {/* ================= MASTER BEDROOM SUITE (Bottom-Right) ================= */}
       <rect x="380" y="220" width="360" height="240" fill="#F1F5F9" stroke="#334155" strokeWidth="2.5" />
-      {/* Master Bed King */}
       <rect x="500" y="260" width="115" height="135" rx="4" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1.5" />
       <rect x="510" y="268" width="42" height="25" rx="2" fill="#FFFFFF" />
       <rect x="562" y="268" width="42" height="25" rx="2" fill="#FFFFFF" />
-      {/* Side tables */}
       <rect x="475" y="265" width="20" height="25" rx="2" fill="#CBD5E1" />
       <rect x="620" y="265" width="20" height="25" rx="2" fill="#CBD5E1" />
-      {/* Master Wardrobe */}
       <rect x="680" y="240" width="50" height="170" rx="3" fill="#E2E8F0" stroke="#94A3B8" strokeWidth="1" />
       <text x="560" y="420" textAnchor="middle" className="text-[13px] font-bold fill-slate-900 font-sans">
         MASTER BEDROOM SUITE
