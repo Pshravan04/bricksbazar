@@ -16,6 +16,7 @@ import { Modal } from '@/components/ui/Modal';
 import { useToast } from '@/components/ui/Toast';
 import { AmenitiesSlider } from '@/components/property/AmenitiesSlider';
 import { LocationWithMap } from '@/components/property/LocationWithMap';
+import { FloorPlanSection } from '@/components/property/FloorPlanSection';
 import {
   MapPin,
   Building,
@@ -49,6 +50,16 @@ export default function ProjectDetailPage() {
   };
 
   const similarProjects = MOCK_PROJECTS.filter((p) => p.id !== project.id).slice(0, 2);
+
+  const projectConfigs = (project.configurations || []).map((bhk, i) => ({
+    id: `proj-cfg-${i}`,
+    bhk: bhk as any,
+    carpetArea: project.carpetAreaRange.min + i * 380,
+    superBuiltUpArea: Math.round((project.carpetAreaRange.min + i * 380) * 1.32),
+    bathrooms: bhk.includes('4') ? 4 : bhk.includes('3') ? 3 : 2,
+    balconies: bhk.includes('4') ? 3 : 2,
+    price: project.startingPrice + i * 15000000,
+  }));
 
   return (
     <div className="min-h-screen bg-brand-bg pb-24">
@@ -185,6 +196,17 @@ export default function ProjectDetailPage() {
                 </div>
               </div>
             </div>
+
+            {/* Architectural Floor Plans & Layouts */}
+            <FloorPlanSection
+              configurations={projectConfigs}
+              defaultBhk={project.configurations?.[0] || '3 BHK'}
+              defaultCarpetArea={project.carpetAreaRange.min}
+              defaultSuperBuiltUpArea={Math.round(project.carpetAreaRange.min * 1.32)}
+              defaultPrice={project.startingPrice}
+              propertyTitle={project.name}
+              onScheduleVisit={() => setSiteVisitOpen(true)}
+            />
 
             {/* Curated Master Clubhouse & Amenities Images Slider */}
             <AmenitiesSlider

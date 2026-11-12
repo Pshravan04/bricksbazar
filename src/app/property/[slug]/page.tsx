@@ -17,6 +17,7 @@ import { Modal } from '@/components/ui/Modal';
 import { useToast } from '@/components/ui/Toast';
 import { AmenitiesSlider } from '@/components/property/AmenitiesSlider';
 import { LocationWithMap } from '@/components/property/LocationWithMap';
+import { FloorPlanSection } from '@/components/property/FloorPlanSection';
 import {
   MapPin,
   Heart,
@@ -328,6 +329,20 @@ export default function PropertyDetailPage() {
                 </div>
               </div>
             </div>
+
+            {/* Architectural Floor Plans & Layouts */}
+            <FloorPlanSection
+              configurations={property.configurations}
+              selectedConfigId={selectedConfigId}
+              onSelectConfig={setSelectedConfigId}
+              defaultBhk={currentBhk}
+              defaultCarpetArea={currentCarpetArea}
+              defaultSuperBuiltUpArea={currentSuperBuiltUpArea}
+              defaultPrice={currentPrice}
+              isRent={isRent}
+              propertyTitle={property.title}
+              onScheduleVisit={() => setSiteVisitModalOpen(true)}
+            />
 
             {/* Key Highlights & Description */}
             <div className="bg-white rounded-card border border-brand-border p-6 shadow-card space-y-4">
