@@ -44,6 +44,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/h-rishabraj-opulence.jpg',
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -140,6 +143,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/lt-elixir-reserve.jpg',
+      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -236,6 +242,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/the-address-by-gs-bandra.jpeg',
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'New Launch',
@@ -323,6 +332,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/lt-mahim.jpg',
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -409,6 +421,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/arihant-at-asalpha.png',
+      'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Unfurnished',
     possession: 'Ready to Move',
@@ -504,6 +519,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/godrej-vistas-vikhroli.png',
+      'https://images.unsplash.com/photo-1617103996702-96ff29b1c467?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1617098900591-3f90928e8c54?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -599,6 +617,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/adani-triumph.webp',
+      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1560185007-5f0bb1866cab?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Under Construction',
@@ -685,6 +706,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/oberoi-garden-city-thane.jpg',
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'New Launch',
@@ -771,6 +795,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/lodha-borivali.jpg',
+      'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'New Launch',
@@ -857,6 +884,9 @@ export const MOCK_PROPERTIES: Property[] = [
     ],
     images: [
       '/images/properties/crescent-silverwoods.jpg',
+      'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1560185009-dddeb820c7b7?auto=format&fit=crop&w=1200&q=80',
     ],
     furnishing: 'Semi-Furnished',
     possession: 'Ready to Move',

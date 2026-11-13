@@ -141,7 +141,10 @@ export default function PropertyDetailPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 h-[340px] sm:h-[460px]">
             {/* Main Primary Image */}
             <div
-              className="relative lg:col-span-2 h-full cursor-pointer group overflow-hidden"
+              className={cn(
+                'relative h-full cursor-pointer group overflow-hidden',
+                property.images.length > 1 ? 'lg:col-span-2' : 'lg:col-span-3'
+              )}
               onClick={() => {
                 setGalleryStartIndex(0);
                 setIsGalleryOpen(true);
@@ -174,25 +177,32 @@ export default function PropertyDetailPage() {
             </div>
 
             {/* Side Thumbnail Stack */}
-            <div className="hidden lg:grid grid-rows-2 gap-2 h-full">
-              {property.images.slice(1, 3).map((img, idx) => (
-                <div
-                  key={idx}
-                  className="relative h-full cursor-pointer group overflow-hidden"
-                  onClick={() => {
-                    setGalleryStartIndex(idx + 1);
-                    setIsGalleryOpen(true);
-                  }}
-                >
-                  <Image
-                    src={img}
-                    alt={`${property.title} gallery thumbnail ${idx + 2}`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
+            {property.images.length > 1 && (
+              <div
+                className={cn(
+                  'hidden lg:grid gap-2 h-full',
+                  property.images.length === 2 ? 'grid-rows-1' : 'grid-rows-2'
+                )}
+              >
+                {property.images.slice(1, 3).map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="relative h-full cursor-pointer group overflow-hidden"
+                    onClick={() => {
+                      setGalleryStartIndex(idx + 1);
+                      setIsGalleryOpen(true);
+                    }}
+                  >
+                    <Image
+                      src={img}
+                      alt={`${property.title} gallery thumbnail ${idx + 2}`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* View All Photos Overlay Button */}
@@ -204,7 +214,7 @@ export default function PropertyDetailPage() {
             }}
             className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-brand-text font-bold text-xs px-4 py-2 rounded-button shadow-dropdown hover:bg-white transition flex items-center gap-1.5"
           >
-            <span>View All {property.images.length} Photos</span>
+            <span>{property.images.length > 1 ? `View All ${property.images.length} Photos` : 'View Photo'}</span>
           </button>
         </div>
       </div>
