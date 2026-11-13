@@ -447,6 +447,25 @@ export default function PropertyDetailPage() {
                 </div>
               </div>
 
+              {/* Listing Source Disclosure Banner */}
+              <div className="text-[11px] px-3.5 py-2.5 rounded-lg bg-brand-bg border border-brand-border text-brand-text-secondary leading-snug">
+                {property.postedBy === 'Owner' && (
+                  <span>
+                    <strong className="text-emerald-700 font-semibold">Direct Owner Listing:</strong> Connect directly with the property owner with zero intermediary brokerage fees.
+                  </span>
+                )}
+                {(property.postedBy === 'Builder' || property.postedBy === 'Developer') && (
+                  <span>
+                    <strong className="text-blue-700 font-semibold">Developer Direct Sales:</strong> Listed directly by the project promoter. Official builder pricing with zero buyer brokerage.
+                  </span>
+                )}
+                {property.postedBy === 'Agent' && (
+                  <span>
+                    <strong className="text-brand-text font-semibold">RERA Registered Agent Listing:</strong> Marketed by a licensed real estate consultant. Professional advisory and standard brokerage apply as per RERA guidelines.
+                  </span>
+                )}
+              </div>
+
               {/* Dynamic Price Reminder in Widget */}
               <div className="bg-brand-bg p-3.5 rounded-lg border border-brand-border">
                 <span className="text-[10px] text-brand-text-secondary uppercase font-semibold block">

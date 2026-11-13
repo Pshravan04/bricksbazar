@@ -34,7 +34,7 @@ export default function TermsPage() {
           <section className="space-y-3">
             <h2 className="text-base sm:text-lg font-bold text-[#252525]">1. Acceptance of Terms</h2>
             <p>
-              By accessing, browsing, or registering an account on BricksBazar (&ldquo;Portal&rdquo;), you agree to be bound by these Terms and Conditions and our Privacy Policy. If you do not agree to all provisions, you must refrain from using our services.
+              By accessing, browsing, or registering an account on BricksBazar (<a href="https://bricksbazar.in" className="text-[#C6383B] underline">bricksbazar.in</a>), operated by BricksBazar Realty LLP (MahaRERA Registration: <strong>A51800029418</strong>), you agree to be bound by these Terms and Conditions and our Privacy Policy. If you do not agree to all provisions, you must refrain from using our services.
             </p>
           </section>
 

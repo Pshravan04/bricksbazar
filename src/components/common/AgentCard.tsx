@@ -22,7 +22,7 @@ export function AgentCard({ agent, onContactClick, className }: AgentCardProps) 
         <div className="flex items-start gap-3.5 mb-4">
           <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-brand-border group-hover:border-brand-red transition">
             <Image
-              src={agent.avatar || 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80'}
+              src={agent.avatar || '/images/avatars/neutral-agent.svg'}
               alt={agent.name}
               fill
               className="object-cover"

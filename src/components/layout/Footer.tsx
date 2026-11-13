@@ -45,9 +45,9 @@ export function Footer() {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-sm text-brand-text font-heading">100% RERA Verified</h4>
+              <h4 className="font-bold text-sm text-brand-text font-heading">RERA Verified Listings</h4>
               <p className="text-xs text-brand-text-secondary mt-0.5 leading-relaxed">
-                Every listed project is cross-checked with State RERA registries for undisputed title clearance.
+                Every listed project is cross-checked with State RERA registries for statutory title compliance.
               </p>
             </div>
           </div>
@@ -83,7 +83,7 @@ export function Footer() {
             <div>
               <h4 className="font-bold text-sm text-brand-text font-heading">Institutional Advisory</h4>
               <p className="text-xs text-brand-text-secondary mt-0.5 leading-relaxed">
-                Private client site visits, market price benchmark checks, and legal escrow support.
+                Private client site visits, market price benchmark checks, and legal title verification support.
               </p>
             </div>
           </div>
@@ -294,7 +294,7 @@ export function Footer() {
       <div className="border-t border-brand-border bg-brand-bg py-5 px-4 sm:px-6 lg:px-8 text-xs text-brand-text-secondary">
         <div className="max-w-[1840px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <div>
-            &copy; {new Date().getFullYear()} BricksBazar Real Estate Platforms Ltd. All rights reserved. MahaRERA Regulatory Compliant.
+            &copy; {new Date().getFullYear()} BricksBazar Realty LLP. All rights reserved. MahaRERA Agent Reg. A51800029418.
           </div>
           <div className="flex items-center gap-4 text-xs font-medium">
             <span className="flex items-center gap-1.5 text-brand-success">
@@ -302,8 +302,8 @@ export function Footer() {
               Verified Registry Live
             </span>
             <span>&bull;</span>
-            <span className="text-brand-text-secondary">
-              ISO 9001:2015 Quality Standards
+            <span className="text-brand-text-secondary font-mono">
+              MahaRERA: A51800029418
             </span>
           </div>
         </div>

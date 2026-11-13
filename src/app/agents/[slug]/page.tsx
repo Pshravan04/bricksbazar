@@ -59,7 +59,7 @@ export default function AgentProfilePage() {
               <div className="flex flex-col sm:flex-row items-start gap-6 mb-6">
                 <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-brand-border flex-shrink-0">
                   <Image
-                    src={agent.avatar || 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80'}
+                    src={agent.avatar || '/images/avatars/neutral-agent.svg'}
                     alt={agent.name}
                     fill
                     className="object-cover"

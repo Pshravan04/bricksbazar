@@ -31,7 +31,7 @@ export type FurnishingStatus = 'Furnished' | 'Semi-Furnished' | 'Unfurnished';
 
 export type PossessionStatus = 'Ready to Move' | 'Under Construction' | 'New Launch';
 
-export type PostedBy = 'Owner' | 'Agent' | 'Builder';
+export type PostedBy = 'Owner' | 'Agent' | 'Builder' | 'Developer';
 
 export interface LocationInfo {
   city: string;

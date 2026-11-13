@@ -7,7 +7,7 @@ import { MOCK_MARKETPLACE_PRODUCTS } from '@/mocks/marketplace';
 import { MOCK_ARTICLES } from '@/mocks/articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bricksbazar.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bricksbazar.in';
   const currentDate = new Date().toISOString();
 
   // Static core routes

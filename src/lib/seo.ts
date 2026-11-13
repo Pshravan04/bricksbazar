@@ -5,7 +5,7 @@
 import { Property, Project, Agent, Developer, MarketplaceProduct } from '@/types';
 import { Article } from '@/mocks/articles';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://bricksbazar.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://bricksbazar.in';
 
 /**
  * Platform Organization Schema
@@ -14,11 +14,11 @@ export function generateOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'BricksBazar',
+    name: 'BricksBazar Realty LLP',
     url: SITE_URL,
     logo: `${SITE_URL}/brand/logo.png`,
     description:
-      'India Premier Real Estate Discovery Portal and Construction Materials Marketplace.',
+      'BricksBazar Realty LLP — RERA Accredited Real Estate Marketplace & Strategic Advisory.',
     sameAs: [
       'https://www.linkedin.com/company/bricksbazar',
       'https://twitter.com/bricksbazar',
@@ -26,17 +26,17 @@ export function generateOrganizationSchema() {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-1800-209-8899',
+      telephone: '+91 98206 15020',
       contactType: 'customer service',
       areaServed: 'IN',
-      availableLanguage: ['English', 'Hindi'],
+      availableLanguage: ['English', 'Hindi', 'Marathi', 'Gujarati'],
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Level 14, One BKC, G-Block, Bandra Kurla Complex',
+      streetAddress: 'A-909, 9th Floor, Crystal 86-Central, off Shreyas Signal, Andheri-Ghatkopar Link Road, Ghatkopar West',
       addressLocality: 'Mumbai',
       addressRegion: 'Maharashtra',
-      postalCode: '400051',
+      postalCode: '400086',
       addressCountry: 'IN',
     },
   };

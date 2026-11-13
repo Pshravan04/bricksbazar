@@ -131,8 +131,17 @@ export function PropertyCard({
                 <span className="font-semibold text-brand-text block leading-tight">
                   {property.ownerOrAgent.name}
                 </span>
-                <span className="text-[10px] text-brand-text-secondary">
-                  Posted by {property.postedBy}
+                <span className="text-[10px] text-brand-text-secondary flex items-center gap-1">
+                  <span>Posted by {property.postedBy}</span>
+                  {property.postedBy === 'Owner' && (
+                    <span className="text-emerald-700 font-semibold">&bull; 0% Brokerage</span>
+                  )}
+                  {(property.postedBy === 'Builder' || property.postedBy === 'Developer') && (
+                    <span className="text-blue-700 font-semibold">&bull; Builder Direct</span>
+                  )}
+                  {property.postedBy === 'Agent' && (
+                    <span className="text-brand-text-secondary">&bull; RERA Agent</span>
+                  )}
                 </span>
               </div>
             </div>

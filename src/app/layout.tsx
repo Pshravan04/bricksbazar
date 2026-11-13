@@ -6,7 +6,7 @@ import { ToastProvider } from '@/components/ui/Toast';
 
 import { generateOrganizationSchema } from '@/lib/seo';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://bricksbazar.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://bricksbazar.in';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     'new projects RERA',
     'verified real estate agents',
   ],
-  authors: [{ name: 'BricksBazar Technologies' }],
-  creator: 'BricksBazar',
-  publisher: 'BricksBazar Technologies Pvt Ltd',
+  authors: [{ name: 'BricksBazar Realty LLP' }],
+  creator: 'BricksBazar Realty LLP',
+  publisher: 'BricksBazar Realty LLP',
   icons: {
     icon: '/brand/logo.png',
     apple: '/brand/logo.png',

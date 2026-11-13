@@ -368,11 +368,11 @@ export default function HomePage() {
 
               <div className="text-xs">
                 <div className="font-bold text-brand-text flex items-center gap-1">
-                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                  4.9 Rating
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  MahaRERA Registered
                 </div>
                 <div className="text-brand-text-secondary text-[11px]">
-                  from 12k+ buyers &amp; developers
+                  Agent Reg. No. A51800029418
                 </div>
               </div>
             </div>
@@ -510,9 +510,9 @@ export default function HomePage() {
         <div className="mt-12 pt-8 border-t border-brand-border/60 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-xs text-brand-text-secondary">
             <span className="w-2 h-2 rounded-full bg-brand-success animate-pulse" />
-            <span className="font-semibold text-brand-text">Showing {popularProperties.length} of 24 Verified Residences</span>
+            <span className="font-semibold text-brand-text">Showing {popularProperties.length} of {MOCK_PROPERTIES.length} Curated Listings</span>
             <span>&bull;</span>
-            <span>100% MahaRERA Audited</span>
+            <span>MahaRERA &amp; RERA Registered Projects</span>
           </div>
 
           <Link
@@ -590,20 +590,20 @@ export default function HomePage() {
               zone: 'sobo',
               city: 'South Mumbai (SoBo)',
               state: 'Heritage & Ultra-Luxury',
-              count: '190+ Luxury Residences',
-              avgPrice: '₹ 68,500/sq.ft',
-              localities: 'Worli • Lower Parel • Marine Drive • Malabar Hill',
+              count: `${MOCK_PROPERTIES.filter(p => p.location.city === 'Mumbai' && (p.location.subLocality?.toLowerCase().includes('south') || p.location.locality.toLowerCase().includes('mahim'))).length} Curated Residences`,
+              avgPrice: '₹ 46,000/sq.ft',
+              localities: 'Mahim • Worli • Lower Parel • Marine Drive',
               image: '/images/properties/lt-mahim.jpg',
-              href: '/buy?city=Mumbai&locality=South+Mumbai',
+              href: '/buy?city=Mumbai&locality=Mahim',
             },
             {
               id: 'western',
               zone: 'western',
               city: 'Western Suburbs',
               state: 'Coastal & High-Growth Hub',
-              count: '420+ Verified Listings',
+              count: `${MOCK_PROPERTIES.filter(p => p.location.subLocality?.toLowerCase().includes('western')).length} Curated Residences`,
               avgPrice: '₹ 34,200/sq.ft',
-              localities: 'Bandra • Juhu • Andheri • Goregaon • Borivali',
+              localities: 'Bandra • Juhu • Goregaon • Borivali',
               image: '/images/properties/h-rishabraj-opulence.jpg',
               href: '/buy?city=Mumbai&locality=Western+Suburbs',
             },
@@ -612,10 +612,10 @@ export default function HomePage() {
               zone: 'central',
               city: 'Central Suburbs',
               state: 'Tech Parks & Lakefront',
-              count: '310+ Verified Listings',
-              avgPrice: '₹ 22,800/sq.ft',
+              count: `${MOCK_PROPERTIES.filter(p => p.location.subLocality?.toLowerCase().includes('central')).length} Curated Residences`,
+              avgPrice: '₹ 28,000/sq.ft',
               localities: 'Powai • Ghatkopar • Vikhroli • Kanjurmarg',
-              image: '/images/properties/lt-elixir-reserve.jpg',
+              image: '/images/properties/godrej-vistas-vikhroli.png',
               href: '/buy?city=Mumbai&locality=Central+Suburbs',
             },
             {
@@ -623,7 +623,7 @@ export default function HomePage() {
               zone: 'mmr',
               city: 'Thane MMR',
               state: 'Integrated Townships',
-              count: '280+ Premium Listings',
+              count: `${MOCK_PROPERTIES.filter(p => p.location.city.toLowerCase() === 'thane').length} Master Township`,
               avgPrice: '₹ 14,500/sq.ft',
               localities: 'Pokhran Rd 2 • Majiwada • Ghodbunder Rd',
               image: '/images/properties/oberoi-garden-city-thane.jpg',
@@ -632,22 +632,22 @@ export default function HomePage() {
             {
               id: 'navi-mumbai',
               zone: 'mmr',
-              city: 'Navi Mumbai',
+              city: 'Navi Mumbai & Coastal',
               state: 'Airport Corridor & Smart City',
-              count: '240+ Growth Listings',
+              count: 'Curated Opportunities',
               avgPrice: '₹ 12,800/sq.ft',
-              localities: 'Vashi • Palm Beach • Kharghar • Airoli',
+              localities: 'Vashi • Palm Beach • Kharghar • Alibaug',
               image: '/images/properties/hiranandani-sands-alibaug.webp',
-              href: '/buy?city=Navi+Mumbai',
+              href: '/buy?city=Mumbai',
             },
             {
               id: 'regional',
               zone: 'regional',
-              city: 'Plotted & Retreats',
-              state: 'Nature & Coastal Enclaves',
-              count: '350+ Curated Units',
+              city: 'Pune & Metros',
+              state: 'Nature & Tech Enclaves',
+              count: `${MOCK_PROPERTIES.filter(p => p.location.city.toLowerCase() !== 'mumbai' && p.location.city.toLowerCase() !== 'thane').length} Verified Properties`,
               avgPrice: '₹ 10,800/sq.ft',
-              localities: 'Khopoli • Pali • Alibaug • Pune',
+              localities: 'Pune • Bengaluru • Goa • Khopoli',
               image: '/images/properties/neoliv-khopoli.png',
               href: '/buy?city=Pune',
             },
@@ -782,7 +782,7 @@ export default function HomePage() {
             href="/agents"
             className="px-5 py-2 rounded-lg border border-gray-300 hover:border-brand-text text-xs sm:text-sm font-semibold text-brand-text hover:text-brand-red transition inline-flex items-center gap-1.5 w-fit shadow-xs"
           >
-            <span>Browse All 2,500+ Agents</span>
+            <span>Browse Verified Agent Directory</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
@@ -798,7 +798,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-brand-bg border-2 border-brand-border">
                     <Image
-                      src={agent.avatar || 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80'}
+                      src={agent.avatar || '/images/avatars/neutral-agent.svg'}
                       alt={agent.name}
                       fill
                       className="object-cover"
@@ -904,7 +904,7 @@ export default function HomePage() {
               <div className="space-y-2 pt-2 text-xs text-gray-200">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand-red-light flex-shrink-0" />
-                  <span>100% Privacy Protection &bull; Masked mobile numbers to stop spam</span>
+                  <span>Privacy Protection &bull; Verified buyer inquiries &amp; zero-spam guarantee</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand-red-light flex-shrink-0" />
@@ -948,7 +948,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand-red flex-shrink-0" />
-                  <span>Standardized digital co-broking agreement with commission escrow</span>
+                  <span>Standardized digital co-broking and commission-split agreements</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand-red flex-shrink-0" />
