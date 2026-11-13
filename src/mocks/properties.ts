@@ -4,7 +4,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-01',
     slug: 'h-rishabraj-opulence-goregaon-west',
-    title: 'H. Rishabraj Opulence — S.V. Road, Goregaon West',
+    title: 'H. Rishabraj Opulence',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -94,7 +94,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-02',
     slug: 'lt-elixir-reserve-powai',
-    title: 'L&T Elixir Reserve — Luxury Residences at Powai',
+    title: 'L&T Elixir Reserve',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -193,7 +193,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-03',
     slug: 'the-address-by-gs-bandra',
-    title: 'The Address by GS — Signature Residences, Bandra',
+    title: 'The Address by GS',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -292,7 +292,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-04',
     slug: 'lt-mahim-south-central-mumbai',
-    title: 'L&T Mahim — Waterfront Residences, Gateway to SoBo',
+    title: 'L&T Mahim',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -381,7 +381,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-05',
     slug: 'arihant-at-asalpha-ghatkopar',
-    title: 'Arihant At Asalpha — Grade-A Commercial Offices',
+    title: 'Arihant At Asalpha',
     listingType: 'commercial',
     propertyCategory: 'Commercial Office',
     location: {
@@ -470,7 +470,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-06',
     slug: 'godrej-vistas-vikhroli',
-    title: 'Godrej Vistas — Vikhroli East, Mumbai',
+    title: 'Godrej Vistas',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -568,7 +568,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-07',
     slug: 'adani-triumph-kanjurmarg',
-    title: 'Adani Triumph — High-Rise Residences, Kanjurmarg',
+    title: 'Adani Triumph',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -666,7 +666,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-08',
     slug: 'oberoi-garden-city-thane',
-    title: 'Oberoi Garden City — Pokhran Road 2, Thane West',
+    title: 'Oberoi Garden City',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -755,7 +755,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-09',
     slug: 'lodha-borivali-west',
-    title: 'Lodha Borivali — Saibaba Nagar, Borivali West',
+    title: 'Lodha Borivali',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -844,7 +844,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-bb-10',
     slug: 'crescent-silverwoods-powai',
-    title: 'Crescent Silverwoods — Chandivali, Powai',
+    title: 'Crescent Silverwoods',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -933,7 +933,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-101',
     slug: '3-bhk-luxury-sea-view-bandra-west',
-    title: '3 BHK Luxury Sea-View Apartment at Bandra West',
+    title: 'Bandra Sea-View Suites',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -1025,7 +1025,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-102',
     slug: '2-bhk-modern-condo-hiranandani-powai',
-    title: '2 BHK Modern Condo with Lake View at Powai',
+    title: 'Hiranandani Castello',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -1101,7 +1101,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-103',
     slug: '3-bhk-designer-flat-for-rent-baner-pune',
-    title: '3 BHK Fully Furnished Flat for Rent in Baner',
+    title: 'Skyline Pristine',
     listingType: 'rent',
     propertyCategory: 'Apartment',
     location: {
@@ -1167,7 +1167,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-104',
     slug: '4-bhk-independent-luxury-villa-kharadi-pune',
-    title: '4 BHK Independent Gated Luxury Villa in Kharadi',
+    title: 'Boulevard Signature Villas',
     listingType: 'buy',
     propertyCategory: 'Villa',
     location: {
@@ -1235,7 +1235,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-105',
     slug: 'grade-a-commercial-office-space-bkc-mumbai',
-    title: 'Grade-A Commercial IT / Corporate Office in BKC',
+    title: 'Apex Financial Tower',
     listingType: 'commercial',
     propertyCategory: 'Commercial Office',
     location: {
@@ -1301,7 +1301,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-106',
     slug: 'gated-residential-villa-plot-hinjawadi-pune',
-    title: 'Gated Residential Villa NA Plot in Hinjawadi Phase 1',
+    title: 'Green Meadows Gated County',
     listingType: 'plot',
     propertyCategory: 'Plot / Land',
     location: {
@@ -1362,7 +1362,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-107',
     slug: '2-bhk-spacious-flat-hiranandani-estate-thane',
-    title: '2 BHK Premium Apartment in Hiranandani Estate Thane West',
+    title: 'Hiranandani Estate Rodas',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
@@ -1426,7 +1426,7 @@ export const MOCK_PROPERTIES: Property[] = [
   {
     id: 'prop-108',
     slug: '3-bhk-smart-home-whitefield-bengaluru',
-    title: '3 BHK Smart Home with Private Balcony in Whitefield',
+    title: 'Prestige Boulevard Towers',
     listingType: 'buy',
     propertyCategory: 'Apartment',
     location: {
